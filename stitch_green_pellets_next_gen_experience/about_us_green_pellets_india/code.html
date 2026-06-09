@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Green Pellets India</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e3e0",
+                    "surface-container-low": "#f3f4f1",
+                    "surface-container": "#eeeeeb",
+                    "on-surface-variant": "#414844",
+                    "outline-variant": "#c1c8c2",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary-container": "#e3e3de",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1b",
+                    "inverse-surface": "#2f312f",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "on-secondary-fixed": "#1b1c19",
+                    "on-tertiary-fixed": "#241a00",
+                    "background": "#f9faf6",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "tertiary": "#735c00",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c7c7c2",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-secondary-fixed-variant": "#464744",
+                    "surface-bright": "#f9faf6",
+                    "on-primary-fixed": "#002115",
+                    "outline": "#717974",
+                    "primary-fixed-dim": "#a4d0ba",
+                    "surface": "#f9faf6",
+                    "on-secondary-container": "#646561",
+                    "primary": "#002d1e",
+                    "on-tertiary-container": "#4e3d00",
+                    "surface-container-highest": "#e2e3e0",
+                    "primary-container": "#1a4333",
+                    "inverse-primary": "#a4d0ba",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#c0ecd6",
+                    "secondary-fixed": "#e3e3de",
+                    "surface-tint": "#3e6655",
+                    "on-primary-fixed-variant": "#264e3e",
+                    "inverse-on-surface": "#f0f1ee",
+                    "on-primary-container": "#85af9b",
+                    "surface-dim": "#dadad7",
+                    "secondary": "#5e5f5b",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e8e8e5",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#cba72f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap-desktop": "160px",
+                    "grid-margin-desktop": "64px",
+                    "container-max-width": "1440px",
+                    "section-gap-mobile": "80px",
+                    "grid-gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "headline-lg": ["Playfair Display"],
+                    "technical-data": ["Manrope"],
+                    "display-xl-mobile": ["Playfair Display"],
+                    "display-xl": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "technical-data": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "900"}],
+                    "display-xl": ["80px", {"lineHeight": "96px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+        }
+        .ambient-glow:hover {
+            box-shadow: 0 0 40px rgba(26, 67, 51, 0.05);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent, #cba72f, transparent);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max-width mx-auto px-grid-margin-desktop py-6">
+<div class="font-headline-lg text-headline-lg text-primary tracking-tighter">
+                Green Pellets India
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-tertiary-container pb-1 transition-colors duration-300" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Why Biomass</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Our Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Industries</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Blogs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps scale-95 active:opacity-80 transition-transform uppercase tracking-widest">
+                Call Now
+            </button>
+</div>
+</nav>
+<main class="mt-24">
+<!-- Hero Section: The Narrative Beginning -->
+<section class="relative h-[819px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-75" data-alt="A wide cinematic landscape of a lush, sustainable forest during golden hour, with soft rays of sun filtering through dense greenery. The style is high-end industrial luxury, utilizing a clean and airy composition that emphasizes environmental stewardship and natural elegance. The lighting is warm and evocative, creating a premium atmosphere of growth and ecological balance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAccvJxJMTAesBpIfTxhI_W3cXgwbK8PlyUOmlHsMNmml40jXYxsh6ZqN2NOyQvssks1Xl2JcI5Zfr6Tf9PlsRrEfEXyGHfOoqm2I0hqbCkA5NsJY4VbCXliuoO3TWxx6EgTjmygzvnaUvTtfI4NnrQ1enCpxeT-iWyhg2wEyboHsHthc9GGUbgfWd6ajxs7ixN7klWQ3vzLcTkrpjThsJK3SDcZH_CQa4PXILZ6r3NTqz1dT3PtVfy8sTIGzGGcu5emlbonzGQAc"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max-width mx-auto px-grid-margin-desktop w-full">
+<div class="max-w-3xl">
+<span class="font-label-caps text-tertiary-fixed tracking-[0.3em] uppercase mb-6 block">Established 2011</span>
+<h1 class="font-display-xl text-display-xl text-white mb-8">Pioneering the <br/><span class="italic font-light">Green Energy</span> Revolution</h1>
+<p class="font-body-lg text-body-lg text-white/90 leading-relaxed max-w-xl">
+                        From a humble foundation in 2011 to becoming India's leading force in sustainable biomass production. We are redefining industrial power through precision engineering and ecological integrity.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Vision & Mission: Asymmetric Layout -->
+<section class="py-section-gap-desktop max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter items-center">
+<div class="md:col-span-5 mb-12 md:mb-0">
+<span class="font-label-caps text-primary mb-4 block">OUR PURPOSE</span>
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">Engineering a Carbon-Neutral Future.</h2>
+<div class="space-y-12">
+<div class="glass-card p-10 rounded-[48px] ambient-glow transition-all duration-500">
+<h3 class="font-headline-lg text-headline-lg-mobile text-primary mb-4 flex items-center">
+<span class="material-symbols-outlined mr-4 text-tertiary">visibility</span> Vision
+                            </h3>
+<p class="font-body-md text-on-surface-variant">
+                                To lead the global transition towards sustainable industrial energy by becoming the benchmark for biomass quality, innovation, and environmental responsibility.
+                            </p>
+</div>
+<div class="glass-card p-10 rounded-[48px] ambient-glow transition-all duration-500">
+<h3 class="font-headline-lg text-headline-lg-mobile text-primary mb-4 flex items-center">
+<span class="material-symbols-outlined mr-4 text-tertiary">rocket_launch</span> Mission
+                            </h3>
+<p class="font-body-md text-on-surface-variant">
+                                Empowering industries with high-calorific, eco-friendly pellet solutions while fostering a circular economy that benefits local farmers and global ecosystems.
+                            </p>
+</div>
+</div>
+</div>
+<div class="md:col-span-7 h-[600px] rounded-[48px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sophisticated close-up of high-quality wood biomass pellets in a minimalist glass container, presented with architectural precision. The lighting is high-key and surgical, highlighting the texture and uniformity of the pellets. The background is a clean, industrial workspace with soft architectural lines, reflecting the brand's 'Tesla Energy meets Apple' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmM9TPRrULC_xdtNjuqAFVpsJhy4IAqCauPEM8Mtd1DnTwzsovXsDt47nGmW6mdiF69b__9uk_s02Al14Jazhc0L3fEmqLkTsBgntuiMqlMTZofRownAuRw8hDLEqj8v_wBRVcxEb-97BSL26MTb1nPkEUao34qLXinZaLmAuQ8qMeVAWA3bP4ueM9Hwl--FMW4awNWYbpGXpcDP9RL8-ezsgytcWwUPN_7LrpxFvxrb2g3CeTJ_04MeGKC2e4DvFUfuGaoScAHsQ"/>
+</div>
+</div>
+</section>
+<!-- Growth Journey: Animated Timeline Section -->
+<section class="bg-primary py-section-gap-desktop text-on-primary">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="text-center mb-20">
+<span class="font-label-caps text-tertiary-fixed tracking-widest block mb-4">MILESTONES</span>
+<h2 class="font-headline-lg text-headline-lg">Our Growth Journey</h2>
+</div>
+<div class="relative">
+<!-- Vertical Line (Desktop) -->
+<div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full timeline-line hidden md:block"></div>
+<div class="space-y-24">
+<!-- 2011 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center group">
+<div class="md:text-right">
+<span class="font-display-xl text-headline-lg text-tertiary-fixed opacity-50 group-hover:opacity-100 transition-opacity">2011</span>
+<h4 class="font-headline-lg text-headline-lg-mobile mb-4">The Foundation</h4>
+<p class="text-on-primary/70 max-w-md ml-auto">Founded with a single manufacturing unit and a bold vision to replace coal with renewable biomass in industrial boilers.</p>
+</div>
+<div class="hidden md:flex justify-start">
+<div class="w-4 h-4 bg-tertiary-fixed rounded-full absolute left-1/2 transform -translate-x-1/2 shadow-[0_0_15px_rgba(203,167,47,0.8)]"></div>
+</div>
+</div>
+<!-- 2015 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center group">
+<div class="hidden md:flex justify-end">
+<div class="w-4 h-4 bg-tertiary-fixed rounded-full absolute left-1/2 transform -translate-x-1/2 shadow-[0_0_15px_rgba(203,167,47,0.8)]"></div>
+</div>
+<div class="md:pl-12">
+<span class="font-display-xl text-headline-lg text-tertiary-fixed opacity-50 group-hover:opacity-100 transition-opacity">2015</span>
+<h4 class="font-headline-lg text-headline-lg-mobile mb-4">Technological Leap</h4>
+<p class="text-on-primary/70 max-w-md">Implementation of European pelleting technology, increasing production capacity by 300% and achieving 99% purity.</p>
+</div>
+</div>
+<!-- 2019 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center group">
+<div class="md:text-right">
+<span class="font-display-xl text-headline-lg text-tertiary-fixed opacity-50 group-hover:opacity-100 transition-opacity">2019</span>
+<h4 class="font-headline-lg text-headline-lg-mobile mb-4">National Reach</h4>
+<p class="text-on-primary/70 max-w-md ml-auto">Expansion into 12 major industrial hubs across India, partnering with Fortune 500 manufacturing firms.</p>
+</div>
+<div class="hidden md:flex justify-start">
+<div class="w-4 h-4 bg-tertiary-fixed rounded-full absolute left-1/2 transform -translate-x-1/2 shadow-[0_0_15px_rgba(203,167,47,0.8)]"></div>
+</div>
+</div>
+<!-- 2024 -->
+<div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 items-center group">
+<div class="hidden md:flex justify-end">
+<div class="w-4 h-4 bg-tertiary-fixed rounded-full absolute left-1/2 transform -translate-x-1/2 shadow-[0_0_15px_rgba(203,167,47,0.8)]"></div>
+</div>
+<div class="md:pl-12">
+<span class="font-display-xl text-headline-lg text-tertiary-fixed opacity-50 group-hover:opacity-100 transition-opacity">2024</span>
+<h4 class="font-headline-lg text-headline-lg-mobile mb-4">Global Impact</h4>
+<p class="text-on-primary/70 max-w-md">Setting the standard for biomass export quality and launching our R&amp;D center for high-efficiency bio-fuels.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Profiles: Bento Grid -->
+<section class="py-section-gap-desktop max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="mb-16">
+<span class="font-label-caps text-primary tracking-widest block mb-4 uppercase">Leadership</span>
+<h2 class="font-headline-lg text-headline-lg">Visionaries at the Helm</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Leader 1 -->
+<div class="group relative aspect-[4/5] rounded-[48px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional portrait of a senior industrial executive in a modern, light-filled office space. The executive has a confident and approachable expression, wearing a tailored charcoal suit. The style is executive luxury, with a blurred background of architectural lines and a hint of green vegetation, emphasizing a blend of business acumen and environmental consciousness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQaKAjhVeqVHNBtrox2OwFYJH16IL-GiQ8Mbq-sIMZFrdyCJ3j44se_JosVbz_QwJdkskb3c4vOuSX7fJIH_AZ8s5GeISJjaOsHGvFXXPfZwnczlohzJbXBEHWl5p0qLsXCWL2OGDVieCOcQ6JuPSDmgmOMey3Til1yEzbauWqi_egPxT-ZfHh6g6qcpbNpXuvI0yYpfP7oedhRjmzEYGaL3H6rojkk8vD1qarrllzsBlAYwusoOkc3fnAiC_1N2U1_Tbv_AN5uic"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<p class="font-technical-data text-tertiary-fixed mb-2 uppercase tracking-widest">Founder &amp; CEO</p>
+<h4 class="font-headline-lg text-headline-lg-mobile leading-none">Arjun Mehta</h4>
+</div>
+</div>
+<!-- Leader 2 -->
+<div class="group relative aspect-[4/5] rounded-[48px] overflow-hidden md:mt-12">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A sophisticated portrait of a female Chief Operating Officer in a contemporary glass-walled boardroom. She is dressed in elegant, minimalist professional attire. The image captures a sense of precision and strategic thinking. High-key lighting and a palette of muted greens and whites reinforce the brand's premium industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQEd08YUqcUJ9D2p4uffphABzQ4YJwbf7KqjJixAUdFTK8CoBKFHCJdHajIbJOLi64xpBEuwTkcNiRKzFo3chREp6Ea90AbJ3uW7GXRVLatDCo1AXjaTDsAw06dKYVITex0pJTlBGePVhdSWF6NMpwJbS8HuBHL7w5cbKx9ybYkTLOFeUGMHyuuJrHMxRIw_uSr-J7s5hxZvJD1U9lh63SnPBg1Iy4W-n6xfcpz9y2w4QXvfBAPJplUfP8pkeBB2Eb4mxmrmF2zvg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<p class="font-technical-data text-tertiary-fixed mb-2 uppercase tracking-widest">Chief Operations Officer</p>
+<h4 class="font-headline-lg text-headline-lg-mobile leading-none">Sarah Chen</h4>
+</div>
+</div>
+<!-- Leader 3 -->
+<div class="group relative aspect-[4/5] rounded-[48px] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A portrait of a male Chief Technology Officer in a high-tech R&amp;D facility. The background shows blurred equipment and scientific diagrams. He is wearing smart-casual professional clothing. The mood is innovative and focused, with clean, crisp lighting that highlights the technological side of the biomass energy sector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZt3fs-9bRHo6FQW-nhBozlwHPzZAt0UtZGsftzo0vG2zg_RMv3XvgyaEMNC-jMs4n3xqVMQTxPiCO5e3dvcJ48mN-WuPuvYyZFfk7rqoYcjb3_M-s-rJzSZTZ_z5yC1JoRVbp6yoekGMppDz8obA2-MzNgIzzKNg_SL8i_ig_5VS64BLNk9OBtv_0dfnjqoEy2RYUtrXyeoOG5jXJX9B5K9GyB2jFQjYAXv0BnEEZzSyzOUG5s3_cuHRppZFoLmy81uN5wUGuAeI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
+<div class="absolute bottom-10 left-10 text-white">
+<p class="font-technical-data text-tertiary-fixed mb-2 uppercase tracking-widest">Head of Innovation</p>
+<h4 class="font-headline-lg text-headline-lg-mobile leading-none">Vikram Singh</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Sustainability Commitment -->
+<section class="py-section-gap-desktop bg-surface-container overflow-hidden">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<img class="rounded-[48px] shadow-2xl" data-alt="A majestic mountain landscape with deep green pine forests and a clear, pristine lake in the foreground. The composition is expansive and cinematic, symbolizing the vast environmental impact of sustainable energy. The lighting is early morning mist, creating a serene and timeless quality that reflects a long-term commitment to ecological preservation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOwnTijigkeUxWuiHC9GtM9OiUrAiRTpjJ9bGathwfRArTWR4IGWvTnRxL_TL3owUH0Z8Hp4APpVqeQ6QMFd2fPKeQfIDX3EE2gvhmTIxuc-KzpuT28azo1p8JI3oBg5E-CRZwpTFmQIob1YFwpwBEMK3aa1w6HcCPgIAzVBLbFu-z_put3UPStf6sLiDVEChhxOaWvijH6JHzUXdJaa6qNbi1X5Y6q0m33g3zFy38rM0eXdYBRUUGIcIWcwI68DH9vegnZNHHhJk"/>
+</div>
+<div class="md:w-1/2">
+<span class="font-label-caps text-primary tracking-widest block mb-4 uppercase">COMMITMENT</span>
+<h2 class="font-headline-lg text-headline-lg mb-8">Harmony with Nature</h2>
+<p class="font-body-lg text-on-surface-variant mb-10 leading-relaxed">
+                            Our sustainability commitment goes beyond production. We ensure a transparent supply chain that prevents deforestation, minimizes logistics carbon footprint, and reinvests in rural communities. Every pellet produced is a step toward restoring the Earth's balance.
+                        </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h5 class="font-display-xl text-headline-lg text-primary mb-1">500K+</h5>
+<p class="font-technical-data text-on-surface-variant uppercase tracking-widest">Tons of CO2 Offset</p>
+</div>
+<div>
+<h5 class="font-display-xl text-headline-lg text-primary mb-1">100%</h5>
+<p class="font-technical-data text-on-surface-variant uppercase tracking-widest">Renewable Sourcing</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements & Certification -->
+<section class="py-section-gap-desktop max-w-container-max-width mx-auto px-grid-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg mb-16">Global Standards. Local Pride.</h2>
+<div class="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[64px] text-primary mb-4">verified</span>
+<p class="font-label-caps">ISO 9001:2015</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[64px] text-primary mb-4">eco</span>
+<p class="font-label-caps">ENplus Certified</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[64px] text-primary mb-4">public</span>
+<p class="font-label-caps">UN Global Compact</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-[64px] text-primary mb-4">workspace_premium</span>
+<p class="font-label-caps">Top Innovator 2023</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full pt-section-gap-desktop pb-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-grid-gutter max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="md:col-span-4 mb-12 md:mb-0">
+<div class="font-headline-lg text-headline-lg text-white mb-6">Green Pellets India</div>
+<p class="text-on-primary/70 max-w-sm mb-8">
+                    Leading the transition to sustainable industrial energy with world-class biomass pellet solutions.
+                </p>
+<div class="flex space-x-6">
+<a class="hover:text-tertiary-fixed-dim transition-all opacity-90 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="hover:text-tertiary-fixed-dim transition-all opacity-90 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h6 class="font-label-caps text-tertiary-fixed mb-6 uppercase">Quick Links</h6>
+<ul class="space-y-4">
+<li><a class="text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Home</a></li>
+<li><a class="text-tertiary-fixed font-bold" href="#">About Us</a></li>
+<li><a class="text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Our Products</a></li>
+<li><a class="text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Industries</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h6 class="font-label-caps text-tertiary-fixed mb-6 uppercase">Legal</h6>
+<ul class="space-y-4">
+<li><a class="text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Sustainability Report</a></li>
+<li><a class="text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Investor Relations</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h6 class="font-label-caps text-tertiary-fixed mb-6 uppercase">Newsletter</h6>
+<p class="text-on-primary/70 mb-6">Stay updated with the latest in green energy.</p>
+<form class="flex border-b border-on-primary/30 pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-white placeholder-white/40 flex-grow" placeholder="Email Address" type="email"/>
+<button class="material-symbols-outlined text-tertiary-fixed" type="submit">arrow_forward</button>
+</form>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-on-primary/10 text-center text-on-primary/40 font-body-md">
+            © 2024 Green Pellets India. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Simple animation on scroll effect for glass cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+            observer.observe(card);
+        });
+
+        // Interactive timeline hover effect enhancement
+        const timelineEntries = document.querySelectorAll('.group');
+        timelineEntries.forEach(entry => {
+            entry.addEventListener('mouseenter', () => {
+                const dot = entry.querySelector('.bg-tertiary-fixed');
+                if (dot) dot.classList.add('scale-150');
+            });
+            entry.addEventListener('mouseleave', () => {
+                const dot = entry.querySelector('.bg-tertiary-fixed');
+                if (dot) dot.classList.remove('scale-150');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Newsroom | Green Pellets India</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e2e3e0",
+                        "surface-container-low": "#f3f4f1",
+                        "surface-container": "#eeeeeb",
+                        "on-surface-variant": "#414844",
+                        "outline-variant": "#c1c8c2",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-container": "#e3e3de",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1b",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "on-secondary-fixed": "#1b1c19",
+                        "on-tertiary-fixed": "#241a00",
+                        "background": "#f9faf6",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "tertiary": "#735c00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c7c2",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary-fixed-variant": "#464744",
+                        "surface-bright": "#f9faf6",
+                        "on-primary-fixed": "#002115",
+                        "outline": "#717974",
+                        "primary-fixed-dim": "#a4d0ba",
+                        "surface": "#f9faf6",
+                        "on-secondary-container": "#646561",
+                        "primary": "#002d1e",
+                        "on-tertiary-container": "#4e3d00",
+                        "surface-container-highest": "#e2e3e0",
+                        "primary-container": "#1a4333",
+                        "inverse-primary": "#a4d0ba",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#c0ecd6",
+                        "secondary-fixed": "#e3e3de",
+                        "surface-tint": "#3e6655",
+                        "on-primary-fixed-variant": "#264e3e",
+                        "inverse-on-surface": "#f0f1ee",
+                        "on-primary-container": "#85af9b",
+                        "surface-dim": "#dadad7",
+                        "secondary": "#5e5f5b",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#cba72f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-desktop": "160px",
+                        "grid-margin-desktop": "64px",
+                        "container-max-width": "1440px",
+                        "section-gap-mobile": "80px",
+                        "grid-gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-lg": ["Playfair Display"],
+                        "technical-data": ["Manrope"],
+                        "display-xl-mobile": ["Playfair Display"],
+                        "display-xl": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                        "technical-data": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "900"}],
+                        "display-xl": ["80px", {"lineHeight": "96px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+            border: 0.5px solid rgba(255, 255, 255, 1);
+        }
+        .text-glow:hover {
+            text-shadow: 0 0 20px rgba(26, 67, 51, 0.2);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f9faf6; }
+        ::-webkit-scrollbar-thumb { background: #3e6655; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max-width mx-auto px-grid-margin-desktop py-6">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed tracking-tighter cursor-pointer">
+                Green Pellets India
+            </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Why Biomass</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Our Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Industries</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-tertiary-container pb-1 transition-colors duration-300" href="#">Blogs</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps scale-95 active:opacity-80 transition-transform uppercase tracking-widest">
+                Call Now
+            </button>
+</div>
+</nav>
+<main class="pt-[120px]">
+<!-- Hero Section: Featured Article -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop mb-section-gap-desktop">
+<div class="relative w-full aspect-[21/9] rounded-[48px] overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A sprawling, high-tech sustainable energy plant nestled in a lush green valley during the golden hour. The architecture is sleek and futuristic with reflective glass panels and white steel structures. The lighting is dramatic, casting long shadows and a warm amber glow across the industrial facility. The atmosphere is pristine, modern, and cinematic, reflecting a high-end luxury energy brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhBQseeuYJ06Js6Mp6Fz0q32g7d126uEWb0NK9qkwGAoFhZDiocEPpoUO2zHoYKqid2vGNFzifc23fj8JoAtOHCjSPrOvT8mf4ig2ZlL2VsymBimgTfgBAAkKb8t7t23RznzBHNvwrab1YPX1LGBQRqcLYAcrq7biuAD_v0wmtgJtcq4gVWx9yKqt8UG0m0wdI6jpMs6dOTgoqVVtnyWNwAzEDn3lupd7wu0q0C5Ou8fgu1MrcAVtOy6CZ1zyyIFjSzTd8OAwAWQE"/>
+<div class="absolute bottom-0 left-0 p-16 z-20 max-w-3xl">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-4 py-1.5 rounded-full font-technical-data text-technical-data mb-6 inline-block">FEATURED NEWS</span>
+<h1 class="font-display-xl text-display-xl text-white mb-6 leading-none">The Future of Bio-Energy in Rural India</h1>
+<p class="font-body-lg text-body-lg text-white/80 mb-8 max-w-xl">Exploring how next-generation biomass technologies are revolutionizing local industrial ecosystems while driving global sustainability goals.</p>
+<div class="flex items-center gap-4 text-white/60 font-label-caps text-label-caps">
+<span>BY ADITYA VERMA</span>
+<span class="w-1.5 h-1.5 bg-tertiary-fixed rounded-full"></span>
+<span>8 MIN READ</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filters -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop mb-12">
+<div class="flex items-center gap-8 border-b border-surface-variant/30 pb-6 overflow-x-auto no-scrollbar">
+<button class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-6 -mb-[26px] whitespace-nowrap">ALL UPDATES</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-6 -mb-[26px] whitespace-nowrap">SUSTAINABILITY</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-6 -mb-[26px] whitespace-nowrap">INNOVATION</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-6 -mb-[26px] whitespace-nowrap">INDUSTRY NEWS</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors pb-6 -mb-[26px] whitespace-nowrap">CORPORATE</button>
+</div>
+</section>
+<!-- Main Blog Grid (Asymmetric & Bento-inspired) -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop mb-section-gap-desktop">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<!-- Editorial Card 1 -->
+<div class="col-span-12 md:col-span-8 group cursor-pointer">
+<div class="rounded-[48px] overflow-hidden aspect-[16/9] mb-8 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of premium, highly compressed biomass pellets arranged in an artistic, geometric pattern on a dark stone surface. The lighting is soft and directional, highlighting the natural textures and the clean, industrial finish of the product. The color palette features earthy greens and deep charcoal, exuding a sense of refined technical precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFx6_nYsDKNjQiSP2yQdZFQ-LPgTWTSUJK7_t8DtxNK_zXe1WogpcDG2Y-afA8YRkh-AxrgOx_05wFbcnObd2aQ_xvuoYt6EUhZC4mgbXvEACaj0TAs_D5MXxSSXQYJ8YgRPEDGytduvJENnHS7J-X_6mRbLugnk_yb6W9C7g3oSuPAPCYOyHgW-gA1f-SZAlan4ZcFcJe4BsvIrDeKQoTfXT0wTEHid2ccmmkuuzh_l8DTfqTkjxKH1wO0zakwOBmJ6L97wsN0r8"/>
+</div>
+<div class="max-w-2xl">
+<span class="font-technical-data text-technical-data text-tertiary-fixed-variant tracking-widest mb-4 block">INNOVATION</span>
+<h2 class="font-headline-lg text-headline-lg mb-4 group-hover:text-primary transition-colors">Reinventing the Pellet: High-Density Combustion and Its Environmental Impact</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Our R&amp;D department unveils new manufacturing techniques that increase thermal efficiency by 15% while reducing ash content to record lows.</p>
+</div>
+</div>
+<!-- Secondary Side Stack -->
+<div class="col-span-12 md:col-span-4 flex flex-col gap-12">
+<article class="group cursor-pointer">
+<div class="rounded-[32px] overflow-hidden aspect-video mb-6 bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean, minimalist laboratory setting where a scientist in a white coat is inspecting organic biomass samples under a modern microscope. The room is flooded with bright, natural light through large windows. The overall aesthetic is surgical, professional, and reflects high-end industrial R&amp;D excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAoAjkc5xd7uUFRN3-V0v7S2se4PhYIMkqH2A6X4tBsIsvejKBqK_9gnTdPqtlIHEmp18OlOkF0tnFptXyXTNWIvRZhuHtBk92XZreWfYSQtRutGEyYTZGEAqWIxvJTQhme5TJUOcPH2zI4Qe_TTKISSAETYFvakS49l6lq2d0dVigL6Ya2WOhdJZtIMZ25dA-_qbQvKEL402RC0nS1O9tg2BSD59VrrYVvw1t2WIL-T0WBXypHEyg1xA5-bACgqJp7o56rcRgvH0"/>
+</div>
+<span class="font-technical-data text-technical-data text-tertiary-fixed-variant mb-2 block uppercase">Sustainability</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-2 group-hover:text-primary transition-colors">Our Path to Zero Carbon: 2024 Roadmap</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A comprehensive deep-dive into our supply chain optimizations and carbon sequestration initiatives.</p>
+</article>
+<article class="group cursor-pointer border-t border-surface-variant pt-12">
+<span class="font-technical-data text-technical-data text-tertiary-fixed-variant mb-2 block uppercase">Industry News</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile mb-2 group-hover:text-primary transition-colors">Global Energy Summit 2024: Key Takeaways</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Observations from our leadership team at the summit regarding the shifting landscape of industrial fuels.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- Newsletter / Editorial Callout Section (Glassmorphism) -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop mb-section-gap-desktop">
+<div class="relative rounded-[48px] overflow-hidden py-32 bg-primary px-16 flex flex-col items-center text-center">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-container via-transparent to-transparent"></div>
+</div>
+<div class="z-10 max-w-2xl">
+<span class="font-technical-data text-technical-data text-primary-fixed mb-6 block tracking-[0.2em] uppercase">The Green Bulletin</span>
+<h2 class="font-display-xl-mobile text-display-xl-mobile text-white mb-8">Insights delivered with industrial precision.</h2>
+<p class="font-body-lg text-body-lg text-white/70 mb-12">Join 15,000+ industry leaders receiving our monthly editorial on sustainable energy, innovation, and global policy shifts.</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto">
+<input class="flex-grow bg-white/10 border-white/20 rounded-full px-8 py-4 text-white placeholder:text-white/40 focus:ring-1 focus:ring-tertiary-fixed-dim focus:border-tertiary-fixed-dim outline-none transition-all font-body-md" placeholder="Business Email Address" type="email"/>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps px-10 py-4 rounded-full hover:bg-tertiary-fixed-dim transition-colors whitespace-nowrap">SUBSCRIBE</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Lower Grid: More Stories -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop mb-section-gap-desktop">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-technical-data text-technical-data text-primary uppercase tracking-widest mb-2 block">Latest Thinking</span>
+<h2 class="font-headline-lg text-headline-lg">More from the Newsroom</h2>
+</div>
+<div class="hidden sm:flex items-center gap-4">
+<button class="w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<!-- Blog Item 4 -->
+<article class="group cursor-pointer">
+<div class="aspect-square rounded-[32px] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A macro shot of vibrant green leaves with morning dew drops, set against a blurred background of a modern wind turbine field. The lighting is crisp and refreshing, like a clear spring morning. The image is bright and high-contrast, symbolizing the marriage of nature and clean technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdUJDPR_6DyYvluXtoVNqOZvQbwV1kb8fTESf24WCgbua59ULMuqXGceoelndHoFPePljocmxIj-SKg9FJyn5tDcYD2GToTGnFlyJM2fkuAto5n7jlh4QuMuO5V5Q12nDM3cvYzVFvTekVwHUGku3EjwGaB2w1gDJ-psIgqy7eFSijBprJ9yxWXZByx4BXbKvlTARluYk_VEDydJcyrQkU_DClzzZP3N--8A-ZQJXMxOeCvIrB_SSDDZd71FPSOo9eZ8-aaAZt-hQ"/>
+</div>
+<span class="font-technical-data text-technical-data text-on-surface-variant/60 mb-2 block">12 MAY 2024</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile group-hover:text-primary transition-colors">Biodiversity and Biomass: A Synergistic Relationship</h4>
+</article>
+<!-- Blog Item 5 -->
+<article class="group cursor-pointer">
+<div class="aspect-square rounded-[32px] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="An expansive solar farm in the desert during twilight, with neat rows of panels reflecting the deep purple and orange of the sky. The horizon line is perfectly straight, emphasizing the scale and order of the facility. The lighting is cool-toned with warm highlights on the panel edges, creating a high-specular, technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpcdSLM3id7YGyOAR6yxs6pfdwi_uf8jolgCS5pZwGzYzrHkFSiZTZaLnkWN20BsZIUXGpjo-U13PMCB_wL8oKHzVolc2K72ws9Y-t5wzuKqUmJtERvnORXnyJvoxHpqxWGewJkHNTE3wtqSI9Ed9SrJ8pMWdzSSx3_cfy_lPo6ldFOaG0KpyRLTL6MszfDSOgXDE_61BZF6zSJuSApnzXnnbpEDZ_qgeT3V48SZdEwToP0-MhZsoG59zmY-MDtP-TKXiuriLbp0U"/>
+</div>
+<span class="font-technical-data text-technical-data text-on-surface-variant/60 mb-2 block">05 MAY 2024</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile group-hover:text-primary transition-colors">Hybrid Grids: Integrating Solar and Biomass Storage</h4>
+</article>
+<!-- Blog Item 6 -->
+<article class="group cursor-pointer">
+<div class="aspect-square rounded-[32px] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A stylized digital visualization of a global supply chain network, with glowing white nodes and lines connecting major industrial hubs across a dark, abstract map. The aesthetic is inspired by premium tech interfaces, using high-specular blurs and a sophisticated dark green and white color palette to imply complex logistics and global reach." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLNte3hPG4UOq55bdOLLKDxBgtLaZYq7nhweUsZBYfgOu2jBaFkrWjIvTVNaREJK9tZ1Re_0rlYLbnEp2M85VMGBDY-pkLJjbOvHSUHnxnLTG7ybG2MCHawGUG9ZunaXT_clkC5NJdJRUZIBSFn-SutsdkW6BCw8kZ2Z4_Pk8PC3tPDGs4MSxQNVDKcXkrYgmnFWF_M03hsCIk16lRu-Az6jh4fV1KwhWcZ_gsZ0kfJaVuuODOqYeO8Ep34Ixep5zkMRUmBHmdDbk"/>
+</div>
+<span class="font-technical-data text-technical-data text-on-surface-variant/60 mb-2 block">28 APR 2024</span>
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile group-hover:text-primary transition-colors">Traceability in Bio-fuels: The Blockchain Solution</h4>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-primary dark:bg-primary w-full pt-section-gap-desktop pb-10">
+<div class="grid grid-cols-12 gap-grid-gutter max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="col-span-12 md:col-span-4 mb-16 md:mb-0">
+<div class="font-headline-lg text-headline-lg text-white mb-8">Green Pellets India</div>
+<p class="font-body-md text-body-md text-on-primary/70 max-w-sm">Leading the transition to a sustainable future through premium industrial biomass solutions and advanced energy technology.</p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h5 class="text-white font-label-caps text-label-caps mb-8">EXPLORE</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Products</a></li>
+<li><a class="font-body-md text-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Technology</a></li>
+<li><a class="font-body-md text-body-md text-tertiary-fixed font-bold" href="#">Newsroom</a></li>
+<li><a class="font-body-md text-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h5 class="text-white font-label-caps text-label-caps mb-8">COMPANY</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Sustainability Report</a></li>
+<li><a class="font-body-md text-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Investor Relations</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 mt-16 md:mt-0">
+<h5 class="text-white font-label-caps text-label-caps mb-8">CONNECT</h5>
+<div class="flex gap-6 mb-8">
+<a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all opacity-90 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all opacity-90 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-all opacity-90 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+<div class="text-on-primary/50 font-body-md text-body-md">
+                    © 2024 Green Pellets India. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4', 'shadow-md');
+                nav.classList.remove('py-6', 'shadow-sm');
+            } else {
+                nav.classList.add('py-6', 'shadow-sm');
+                nav.classList.remove('py-4', 'shadow-md');
+            }
+        });
+
+        // Simple smooth scroll and interaction handling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

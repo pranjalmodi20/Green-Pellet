@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Green Pellets India | Sustainable Biomass Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e2e3e0",
+                    "surface-container-low": "#f3f4f1",
+                    "surface-container": "#eeeeeb",
+                    "on-surface-variant": "#414844",
+                    "outline-variant": "#c1c8c2",
+                    "tertiary-fixed": "#ffe088",
+                    "secondary-container": "#e3e3de",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1b",
+                    "inverse-surface": "#2f312f",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1a1c1b",
+                    "on-secondary-fixed": "#1b1c19",
+                    "on-tertiary-fixed": "#241a00",
+                    "background": "#f9faf6",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "tertiary": "#735c00",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c7c7c2",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-secondary-fixed-variant": "#464744",
+                    "surface-bright": "#f9faf6",
+                    "on-primary-fixed": "#002115",
+                    "outline": "#717974",
+                    "primary-fixed-dim": "#a4d0ba",
+                    "surface": "#f9faf6",
+                    "on-secondary-container": "#646561",
+                    "primary": "#002d1e",
+                    "on-tertiary-container": "#4e3d00",
+                    "surface-container-highest": "#e2e3e0",
+                    "primary-container": "#1a4333",
+                    "inverse-primary": "#a4d0ba",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#c0ecd6",
+                    "secondary-fixed": "#e3e3de",
+                    "surface-tint": "#3e6655",
+                    "on-primary-fixed-variant": "#264e3e",
+                    "inverse-on-surface": "#f0f1ee",
+                    "on-primary-container": "#85af9b",
+                    "surface-dim": "#dadad7",
+                    "secondary": "#5e5f5b",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e8e8e5",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#cba72f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap-desktop": "160px",
+                    "grid-margin-desktop": "64px",
+                    "container-max-width": "1440px",
+                    "section-gap-mobile": "80px",
+                    "grid-gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "headline-lg": ["Playfair Display"],
+                    "technical-data": ["Manrope"],
+                    "display-xl-mobile": ["Playfair Display"],
+                    "display-xl": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                    "technical-data": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "900"}],
+                    "display-xl": ["80px", {"lineHeight": "96px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            border: 0.5px solid rgba(255, 255, 255, 0.4);
+        }
+        .dark .glass-panel {
+            background: rgba(26, 67, 51, 0.4);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+        .ambient-glow {
+            box-shadow: 0 0 80px 10px rgba(26, 67, 51, 0.08);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max-width mx-auto px-grid-margin-desktop py-6">
+<span class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed tracking-tighter">Green Pellets India</span>
+<div class="hidden md:flex space-x-8">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-tertiary-container pb-1 hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Why Biomass</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Our Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Industries</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Blogs</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps scale-95 active:opacity-80 transition-transform uppercase">Call Now</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLsHrZQ_ikFwFOhAscpiZ1QAQ7UNIYgO1INVdpCok2efFvh9FUb7iIoTd5jtDfOFX5cP18aQl9tnIGG0Iv-uzJK4KmSQsXVLWFtHoCm3VJ38sR6VkI3ovUw5ljaW4rBkMZncZyhU_iWVJGQ37EtpkTVVXRl7sxIEdTRLnljsh7gZFe3BqsTPyz7xttkWoMTuogAdcq6ebq0JCTsli7AzuV7F7beGA0AqPy8FSZXq6Ycepa82VXQ8JZLYdl8')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max-width mx-auto px-grid-margin-desktop grid grid-cols-12 gap-grid-gutter w-full">
+<div class="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-8">
+<div class="inline-flex items-center space-x-2 px-4 py-1 glass-panel rounded-full w-fit">
+<span class="material-symbols-outlined text-primary text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-technical-data text-technical-data uppercase tracking-widest text-primary">Carbon Neutral Future</span>
+</div>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl text-primary leading-none">Powering the Planet,<br/><span class="text-tertiary">Sustainably.</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Converting India's agricultural footprint into high-density biomass fuel. Precision engineered energy solutions for global industry leaders.</p>
+<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 pt-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-tertiary transition-all duration-500 shadow-xl">Explore Solutions</button>
+<button class="glass-panel px-10 py-5 rounded-full font-label-caps text-label-caps text-primary border border-primary/20 hover:bg-white transition-all">Download Roadmap</button>
+</div>
+</div>
+<!-- Real-time Metrics Card -->
+<div class="hidden lg:flex col-span-5 items-center justify-end">
+<div class="glass-panel p-10 rounded-[48px] ambient-glow space-y-8 w-full max-w-sm transform translate-y-12">
+<div class="space-y-2">
+<span class="font-technical-data text-technical-data text-primary/60 uppercase">Real-time Impact</span>
+<div class="h-px w-full bg-primary/10"></div>
+</div>
+<div>
+<span class="block font-headline-lg text-headline-lg text-primary tracking-tighter">1.2M+</span>
+<span class="font-body-md text-on-surface-variant">Tons of Waste Processed</span>
+</div>
+<div>
+<span class="block font-headline-lg text-headline-lg text-tertiary tracking-tighter">450K</span>
+<span class="font-body-md text-on-surface-variant">CO2 Emission Reduced</span>
+</div>
+<div class="pt-4 flex items-center text-primary space-x-2">
+<span class="font-label-caps text-label-caps">View Full Audit</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- The Agricultural Waste Crisis -->
+<section class="py-section-gap-desktop bg-surface-container">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="grid grid-cols-12 gap-grid-gutter items-center">
+<div class="col-span-12 lg:col-span-5 order-2 lg:order-1">
+<div class="rounded-[48px] overflow-hidden aspect-[4/5] relative">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A cinematic, high-contrast photograph of expansive agricultural fields at sunset with haze from crop burning in the distance. The lighting is dramatic and somber, emphasizing the environmental impact of waste. The color palette features deep ambers, scorched browns, and hazy grays, following a premium industrial aesthetic with a wide depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjIwxJeGYXYWf72P4unr1zQBvnIwnSZsXt1z7CPYouifd-dBnneMiiOpKBitgtcZHVgdnQD7ULwSak3yE3Cs0CT5lMGC3CMMED3Q_rwgRBqfPPxSHjtftbFfPJp2vYMA_X2OYZITW1EjILGk5YNZPv-HussHCbPK6_HVb57vqPIpR9SEA8zDJLuycZV803doPsy78EMt-WgTD_UIjXwVIdkOkasyuZKK7KRZp13WtxB9fbT4lvEveC3Si4XamldwNBm_Hcd2POnew"/>
+<div class="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-3xl">
+<p class="font-body-md italic text-primary">"The annual crop residue burning in India contributes to 25% of the seasonal smog in major cities."</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 lg:offset-1 order-1 lg:order-2 space-y-8">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">The Problem</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">From Crisis to Catalyst</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Every year, millions of tons of agricultural residue are burned in open fields, creating a massive environmental hazard. We don't just see waste; we see the most potent source of renewable energy for a growing nation.</p>
+<div class="grid grid-cols-2 gap-8 pt-8 border-t border-outline-variant/30">
+<div>
+<span class="font-headline-lg text-headline-lg text-primary">90%</span>
+<p class="font-technical-data text-technical-data text-on-surface-variant">Reduction in localized air pollutants through collection.</p>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-primary">15k+</span>
+<p class="font-technical-data text-technical-data text-on-surface-variant">Farmers empowered through waste-to-wealth programs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Science of Conversion (Infographic style) -->
+<section class="py-section-gap-desktop bg-surface relative overflow-hidden">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop text-center mb-24">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">The Cycle of Modern Energy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A multi-stage engineering process that refines raw biomass into industrial-grade power units.</p>
+</div>
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="relative flex flex-col lg:flex-row items-center justify-between space-y-12 lg:space-y-0">
+<!-- Connectors for desktop -->
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-y-1/2"></div>
+<!-- Step 1 -->
+<div class="relative z-10 w-full lg:w-1/4 flex flex-col items-center group">
+<div class="w-32 h-32 glass-panel rounded-full flex items-center justify-center mb-8 ambient-glow group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">agriculture</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">01. Procurement</h3>
+<p class="font-body-md text-on-surface-variant text-center px-6">Direct collection from over 5,000 verified farm networks across India.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 w-full lg:w-1/4 flex flex-col items-center group">
+<div class="w-32 h-32 glass-panel rounded-full flex items-center justify-center mb-8 ambient-glow group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">precision_manufacturing</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">02. Refinement</h3>
+<p class="font-body-md text-on-surface-variant text-center px-6">Shredding and moisture control at sub-5% precision levels.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 w-full lg:w-1/4 flex flex-col items-center group">
+<div class="w-32 h-32 glass-panel rounded-full flex items-center justify-center mb-8 ambient-glow group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">settings_input_component</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">03. Compression</h3>
+<p class="font-body-md text-on-surface-variant text-center px-6">High-pressure extrusions creating 6mm and 8mm premium pellets.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 w-full lg:w-1/4 flex flex-col items-center group">
+<div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center mb-8 shadow-2xl group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-on-primary" data-weight="fill">bolt</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">04. Dispatch</h3>
+<p class="font-body-md text-on-surface-variant text-center px-6">Standardized logistics ensuring 24/7 supply chain integrity.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Precision Bio-Fuels Showcase -->
+<section class="py-section-gap-desktop bg-primary text-on-primary">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="flex flex-col lg:flex-row justify-between items-end mb-24">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-widest mb-4 block">Our Products</span>
+<h2 class="font-headline-lg text-headline-lg mb-8">Engineering Higher Caloric Performance</h2>
+</div>
+<button class="border border-on-primary/30 px-8 py-4 rounded-full font-label-caps text-label-caps hover:bg-on-primary hover:text-primary transition-all mb-8 lg:mb-0">Technical Datasheets</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer">
+<div class="rounded-[48px] overflow-hidden aspect-[4/5] relative mb-8">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A macro studio photograph of high-density biomass pellets, showcasing the smooth, compressed texture and dark, rich wood-like colors. The lighting is focused and professional, creating soft highlights on the rounded edges. The background is a clean, dark industrial surface that suggests precision and quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD41fVSdNEuCUamuGfDfPqku0qNGCdkP3864alvXCpK5I5H5LYF8MPNsNu51PdrVhEo8W6_GR3ocSkoNF8UdNRx_IsS6aLDBuY56qdfS4V1Mz_Wvw_UrxFH3lsB2QJJ3Fp4OMTQ2a95f1gSjZsm4JLpPGd3BNPXq6rsN7rDhEFL0zhekU-_6AlVCZk1MiqOLYopLL1ACOUW_jFFWP-WxuiHr-3sqS47axIIfX1N8r29Tq9B1E_J3lPOn62tBCfz-byiz-DIpyWy6Q8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+</div>
+<h3 class="font-headline-lg text-2xl mb-4">Premium Pine Pellets</h3>
+<p class="font-body-md text-on-primary/70 mb-6">Ultra-low ash content (&lt; 0.5%) designed for residential heating and sensitive industrial boilers.</p>
+<span class="font-technical-data text-technical-data text-tertiary-fixed uppercase">4800 kcal/kg Avg.</span>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer">
+<div class="rounded-[48px] overflow-hidden aspect-[4/5] relative mb-8">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A wide cinematic shot of a modern, organized biomass storage facility. Large, uniform piles of processed agricultural residue are seen in a vast, well-lit industrial space. The aesthetic is clean, technological, and massive in scale, with a cool-toned industrial color palette of steel grays and deep greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPhXLOx-gkxbOPlGuprKyPeumyYTuGuYdJG1jIIXDLrrczqolLv96oIo4agGvya8gz6f9pgTtCLzSLoH--xEsuXx5VmQ99yQgiKDosI1zaN9e9zMmRWI1kq2N9yfx1vlUK9YX0BCLrTEy0VZXoz9g5BFfe0YZyxwM4-DD8chZrFqlQeOblX0r6KbZzwmdugcfL2_hTUKsQ7Ym5vwSMtH4LlqkY5lJi_5GsLhUB9Xz4NDPgU-sRbNG_1IpGpxKucUC0a5u-cU0M0Hg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+</div>
+<h3 class="font-headline-lg text-2xl mb-4">Industrial Grade-A</h3>
+<p class="font-body-md text-on-primary/70 mb-6">High-performance blend optimized for cement kilns and large-scale power plants.</p>
+<span class="font-technical-data text-technical-data text-tertiary-fixed uppercase">4200 kcal/kg Avg.</span>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer">
+<div class="rounded-[48px] overflow-hidden aspect-[4/5] relative mb-8">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="A conceptual industrial photograph showing a single biomass pellet being measured with high-precision digital calipers. The focus is sharp on the pellet and the measurement tool, highlighting the engineering accuracy. The lighting is clinical and high-key, using a white and soft green color palette to convey sustainability and tech." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhzHEZ4aCZA00pUNrnGzuWyyyvR2IwHWkVyfwt265xDifzxAKzoX0qsE1Ceafm5gG6zbnfidGFrQuklHCYTAvG7-mlWxCWAMiTCaWuerxTNH3n86MLeuVGnw59rX22mjrkFbch6hoPQsoeHt7H4zejampQ4SI-t6NJgG7KNsa8QCIrKHA2h6NABwj8BPkv30nl8bAGs3JBXZtiIZE7vIB3eY_2OJsL6eQKvX8NucqkVWeCvlYyx8AXnIStX2zfy2kT5If6ituFVRg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+</div>
+<h3 class="font-headline-lg text-2xl mb-4">Rice Husk Briquettes</h3>
+<p class="font-body-md text-on-primary/70 mb-6">Sustainable solution for brick kilns and rural energy generation at scale.</p>
+<span class="font-technical-data text-technical-data text-tertiary-fixed uppercase">3800 kcal/kg Avg.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Powering Diverse Industries (Bento Grid) -->
+<section class="py-section-gap-desktop bg-surface">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="text-center mb-24">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4 block">Market Reach</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Powering Diverse Industries</h2>
+</div>
+<div class="grid grid-cols-12 grid-rows-2 gap-grid-gutter h-auto lg:h-[800px]">
+<!-- Main Bento Item -->
+<div class="col-span-12 lg:col-span-7 row-span-1 lg:row-span-2 glass-panel rounded-[48px] overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="A massive, futuristic thermal power plant exterior at night, with glowing green lights highlighting the architecture. The facility looks clean and high-tech, unlike traditional coal plants. The sky is dark blue, and the image captures the scale and modern industrial power with high-resolution detail and a cinematic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxZpLBYsNqpLFC5eOEObwFa98kOvOHh_-dZxlmtVQuKNrz8Oi4s-jcTs5ZZC5bJztylVaWnI7B7RT2bbE5yEqA0BfvH5sOY0SaE8U4V_exab0RL8eN7CtF__nPymBQ89eUEVyZTO_1DEsI5lVwDmv18YaZhC6lxd6S60rmLa-pg73zwG93qmWpZFiHxu3f0TmhYZ0HIwDlNklw0qJskcls9nC7_NjlqcaQ2BQ9Bd0aENSoO5HR8DaUG65OcYwhDOiXD1I-whBdvnE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-12">
+<h3 class="font-headline-lg text-on-primary mb-4">Energy &amp; Utilities</h3>
+<p class="font-body-lg text-on-primary/80 max-w-md">Replacement of coal for grid-scale energy production, achieving up to 60% carbon reduction per MWh.</p>
+</div>
+</div>
+<!-- Secondary Bento Item -->
+<div class="col-span-12 lg:col-span-5 row-span-1 glass-panel rounded-[48px] overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Interior of a luxury eco-resort using sustainable heating. Soft, warm lighting illuminates a modern lounge area with a fireplace burning biomass fuel. The aesthetic is warm, inviting, and high-end, featuring natural wood textures and minimalist decor, emphasizing the lifestyle aspect of clean energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASsuMYnQIHF6nhhUFOits7KrPCBgjtZlHCQOgUj6eEl8x7ptzKSmgHlHgGI5gzrzj2DUs1eNNt3RFSKNtdwqS1F54E_5OtV7_f9tSIIDR-6owB9cBio-6oNapv_AdWLlGCjQ5wmXsY3pxbkn70BIxMuaJUK8pT6um2x1L1nJnmw2xj3NN-ds9WwpgWWm9k3NDL4l3rdaaKIT-YilxmKNZgVVp86-vaUkQenOru5YhLFpiMUtVIwuixTParszb3VSSi894qlblnkH4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-8">
+<h3 class="font-headline-lg text-2xl text-on-primary mb-2">Hospitality</h3>
+<p class="font-body-md text-on-primary/80">Premium heating for luxury resorts and eco-conscious hotel chains.</p>
+</div>
+</div>
+<!-- Small Bento Items -->
+<div class="col-span-12 md:col-span-6 lg:col-span-2 row-span-1 glass-panel rounded-[48px] flex flex-col items-center justify-center p-8 text-center ambient-glow">
+<span class="material-symbols-outlined text-4xl text-primary mb-4">factory</span>
+<h4 class="font-label-caps text-label-caps text-primary">Manufacturing</h4>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-3 row-span-1 bg-tertiary-container rounded-[48px] flex flex-col items-center justify-center p-8 text-center shadow-lg group hover:bg-tertiary transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container group-hover:text-on-tertiary mb-4">science</span>
+<h4 class="font-label-caps text-label-caps text-on-tertiary-container group-hover:text-on-tertiary">Chemical Processing</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Executive Endorsements -->
+<section class="py-section-gap-desktop bg-surface-container-low">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="flex flex-col lg:flex-row items-center justify-between mb-24">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 lg:mb-0">Executive Voices</h2>
+<div class="flex space-x-4">
+<button class="w-16 h-16 rounded-full glass-panel flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-16 h-16 rounded-full glass-panel flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<!-- Testimonial 1 -->
+<div class="glass-panel p-12 rounded-[48px] ambient-glow flex flex-col justify-between min-h-[400px]">
+<span class="material-symbols-outlined text-6xl text-primary/10">format_quote</span>
+<p class="font-body-lg text-on-surface text-xl leading-relaxed mb-8">"Green Pellets India has transformed our fuel logistics. Their precision in caloric output is unmatched in the Indian biomass market."</p>
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 rounded-full bg-primary/10 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a corporate executive in a dark suit against a neutral studio background. The subject has a confident expression, and the lighting is high-end corporate style, with soft shadows and a focused depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZbqeaTqHVyAIltYNEx9CXLmV0_Q9R-XMNTovo0_FtTEgynM_cw59STfKqTEgkf17uGyEfGDrhKUv_K9ENQKIMSncGcniFOZvuQ68W5vxsJ1benA2cwgESPxcSVFwV3vG8rftHeUM-JivpbpsbVfKCvB8zx24G8NZHnzAFzrEdMLhRIpHLlTvje2RiGJh6YyuTBBwymgqeZsSnTxz8jC338hku_qei3x4XB0QgwEwiCsARTVAa_qG9csf_C04lEwAlmdUCfFhugBI"/>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-primary">Anil Sharma</span>
+<span class="block font-technical-data text-technical-data text-on-surface-variant">COO, Heavy Industries Ltd.</span>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-panel p-12 rounded-[48px] ambient-glow flex flex-col justify-between min-h-[400px]">
+<span class="material-symbols-outlined text-6xl text-primary/10">format_quote</span>
+<p class="font-body-lg text-on-surface text-xl leading-relaxed mb-8">"Switching to their Pine Pellets reduced our carbon footprint by 42% in just one quarter. It’s both a financial and ecological win."</p>
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 rounded-full bg-primary/10 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a female executive in a minimalist, modern office setting. She is wearing a structured blazer, looking directly at the camera with a poised and authoritative demeanor. The lighting is bright and professional, following the 'Apple-level' clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtjOlLxrB4Y7f5h4ijLVOmHaIBmmkWOweLkwAozq3ZgvYmnHQoCM5nxu8D466Pc65vrXwrsihHRiYGzeSkvoi2HrmqYiI0q9FY3JBTCPEiAqH9G0Ymb_cPcDflLLeRufkZYI8sCUFDRZOGTrueT-n7-_uv_WP-9yZzrCadJ9fqX94OQD2S1Aphy3ZzeKwCpcsaEC3ML8QAu6HcBMfuCiLf_pski5Gd8v78fC5c4BW3dP0FWsXqpPOlSIj5KgEOn47rMIVJGyyLTFA"/>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-primary">Meera Kapoor</span>
+<span class="block font-technical-data text-technical-data text-on-surface-variant">Sustainability Lead, Global Textiles</span>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-panel p-12 rounded-[48px] ambient-glow flex flex-col justify-between min-h-[400px]">
+<span class="material-symbols-outlined text-6xl text-primary/10">format_quote</span>
+<p class="font-body-lg text-on-surface text-xl leading-relaxed mb-8">"Their supply chain reliability is what sets them apart. We never have to worry about energy stockouts even during peak seasons."</p>
+<div class="flex items-center space-x-4">
+<div class="w-14 h-14 rounded-full bg-primary/10 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up studio headshot of a mature businessman with graying hair, wearing a high-end charcoal suit. The background is a soft-focus industrial setting, and the lighting is cinematic and dramatic, highlighting the subject's experience and trustworthiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNRiMSRXWqwIBUrm-PpomJFpZvOKNzz-eYD71elZx3EhL4jSw-76Dp1ZnR-YGMbNIN23P-peekWCs5xylOA2WH_sXdwyqjx5JFiQ0z52iTmzR2AWw16sd7oDrJXfkZcpAwWnZn173lM8TdnRtI2hgSVKAVof4JoHKv9APhm-bp70AmmcKfTATs7Ed45zsOd7jP-NZT4WnByQrcQd1s0884jeVX-k1_FbuovcCk2O8CDH9DjM6ygl3vb3R5tnmjji9HtFmiHywwM7o"/>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-primary">Vikram Singh</span>
+<span class="block font-technical-data text-technical-data text-on-surface-variant">Director, Radiant Energy Corp.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Full-screen CTA -->
+<section class="relative min-h-[80vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center parallax-bg" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvGSb1VdTpxt1ylPy_XRpihKO4urH-tLZXH6EwvYPVXNyy4v7xB1mEo-Jr8EITzB8YVxLyBRag6U5HsdIztdvBtvjW6SYftpM8W4MCG3ahnFw2SJhC4xf3lZZg7TZ_MORiy5CTvH6GCiSk0M-7JVD-iswoabFaC6yzoGQv5NlPAqhlwMp_fZPph_wWN8jYNbyDq_YZGLW0UOY-BfE_XRYNtUpZXnwvhXsGSPwHAHt3Z1pz9DgKB8TrDbyI')"></div>
+<div class="absolute inset-0 bg-primary/60 backdrop-blur-sm"></div>
+</div>
+<div class="relative z-10 max-w-container-max-width mx-auto px-grid-margin-desktop text-center w-full">
+<div class="max-w-4xl mx-auto space-y-12">
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl text-on-primary text-glow leading-tight">Join the Clean Energy Revolution</h2>
+<p class="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto">Ready to transition your industry to high-performance biomass fuel? Let's engineer your carbon-neutral path today.</p>
+<div class="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-8">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-12 py-6 rounded-full font-label-caps text-label-caps hover:bg-tertiary-fixed-dim transition-all shadow-2xl scale-110">Partner with Us</button>
+<button class="glass-panel border-white/20 text-on-primary px-12 py-6 rounded-full font-label-caps text-label-caps hover:bg-white hover:text-primary transition-all">Request a Site Visit</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full pt-section-gap-desktop pb-10 bg-primary dark:bg-primary">
+<div class="grid grid-cols-12 gap-grid-gutter max-w-container-max-width mx-auto px-grid-margin-desktop mb-20">
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<span class="font-headline-lg text-headline-lg text-white">Green Pellets India</span>
+<p class="font-body-md text-on-primary/70 max-w-xs">India's leading biomass fuel engineers. Bridging the gap between agricultural waste and industrial energy needs.</p>
+<div class="flex space-x-6">
+<a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-panel flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+</div>
+</div>
+<div class="col-span-6 md:col-span-3 lg:col-span-2 space-y-6">
+<h4 class="font-label-caps text-label-caps text-white uppercase opacity-50">Sitemap</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Home</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">About Us</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Technology</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Impact</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-3 lg:col-span-2 space-y-6">
+<h4 class="font-label-caps text-label-caps text-white uppercase opacity-50">Products</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Pine Pellets</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Industrial Blend</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Rice Briquettes</a></li>
+<li><a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Custom Mix</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-4 space-y-6">
+<h4 class="font-label-caps text-label-caps text-white uppercase opacity-50">Newsletter</h4>
+<p class="font-body-md text-on-primary/70">Receive monthly updates on clean energy trends and India's sustainability roadmap.</p>
+<div class="relative">
+<input class="w-full bg-white/5 border-none border-b border-white/20 text-white p-4 focus:ring-0 focus:border-tertiary-fixed transition-all rounded-xl" placeholder="Email Address" type="email"/>
+<button class="absolute right-2 top-2 h-10 w-10 flex items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-10">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+<p class="font-body-md text-on-primary/70">© 2024 Green Pellets India. All rights reserved.</p>
+<div class="flex flex-wrap justify-center space-x-8">
+<a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Sustainability Report</a>
+<a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all" href="#">Investor Relations</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

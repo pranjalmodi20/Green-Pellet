@@ -1,0 +1,1 @@
+// BlogPost model placeholder

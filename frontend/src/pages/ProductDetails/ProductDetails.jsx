@@ -1,0 +1,1 @@
+// ProductDetails.jsx placeholder

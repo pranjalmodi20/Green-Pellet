@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 0.5px solid rgba(255, 255, 255, 1);
+        }
+        .ambient-glow:hover {
+            box-shadow: 0 0 40px 5px rgba(26, 67, 51, 0.05);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e2e3e0",
+                        "surface-container-low": "#f3f4f1",
+                        "surface-container": "#eeeeeb",
+                        "on-surface-variant": "#414844",
+                        "outline-variant": "#c1c8c2",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary-container": "#e3e3de",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1a1c1b",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1a1c1b",
+                        "on-secondary-fixed": "#1b1c19",
+                        "on-tertiary-fixed": "#241a00",
+                        "background": "#f9faf6",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "tertiary": "#735c00",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c7c7c2",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-secondary-fixed-variant": "#464744",
+                        "surface-bright": "#f9faf6",
+                        "on-primary-fixed": "#002115",
+                        "outline": "#717974",
+                        "primary-fixed-dim": "#a4d0ba",
+                        "surface": "#f9faf6",
+                        "on-secondary-container": "#646561",
+                        "primary": "#002d1e",
+                        "on-tertiary-container": "#4e3d00",
+                        "surface-container-highest": "#e2e3e0",
+                        "primary-container": "#1a4333",
+                        "inverse-primary": "#a4d0ba",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#c0ecd6",
+                        "secondary-fixed": "#e3e3de",
+                        "surface-tint": "#3e6655",
+                        "on-primary-fixed-variant": "#264e3e",
+                        "inverse-on-surface": "#f0f1ee",
+                        "on-primary-container": "#85af9b",
+                        "surface-dim": "#dadad7",
+                        "secondary": "#5e5f5b",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8e5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#cba72f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-desktop": "160px",
+                        "grid-margin-desktop": "64px",
+                        "container-max-width": "1440px",
+                        "section-gap-mobile": "80px",
+                        "grid-gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-lg": ["Playfair Display"],
+                        "technical-data": ["Manrope"],
+                        "display-xl-mobile": ["Playfair Display"],
+                        "display-xl": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                        "technical-data": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "56px", "fontWeight": "900"}],
+                        "display-xl": ["80px", {"lineHeight": "96px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max-width mx-auto px-grid-margin-desktop py-6">
+<div class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed tracking-tighter">Green Pellets India</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Why Biomass</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed border-b-2 border-tertiary-container pb-1" href="#">Our Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Industries</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Blogs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps scale-95 active:opacity-80 transition-transform hover:bg-tertiary-container hover:text-on-tertiary-container">
+                Call Now
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop mb-section-gap-desktop">
+<div class="grid grid-cols-12 gap-grid-gutter items-center">
+<div class="col-span-12 md:col-span-6 lg:col-span-5">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] mb-4 block">PREMIUM ENERGY SOLUTIONS</span>
+<h1 class="font-display-xl text-display-xl-mobile md:text-display-xl mb-8 leading-tight">Engineered for High-Performance</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">Our diverse portfolio of biomass fuel pellets represents the pinnacle of sustainable energy technology, delivering unrivaled calorific efficiency and industrial precision.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-tertiary-container hover:text-on-tertiary-container transition-all">Request Catalog</button>
+<button class="border border-outline px-10 py-5 rounded-full font-label-caps text-label-caps hover:bg-surface-variant transition-all">Technical Support</button>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-7 relative h-[600px]">
+<div class="absolute inset-0 bg-primary-container rounded-[48px] overflow-hidden">
+<img alt="Product Showcase" class="w-full h-full object-cover mix-blend-overlay opacity-60" src="https://lh3.googleusercontent.com/aida/AP1WRLudrAfW8c3o8y_of9ckFB-8-feUvfZxDmw3AdOnspBFsoyE2MctWdV54ENawwi_vjbEQ76KkPbYVxJV26YnoNT-76d-iuYTr5vstsoYYagsoZuJd7DBlXNNWWozddO2l0jW4dBfRlvGzpzu17sAFFZRXVVTvKAE6v4lh48NPrt2932TC4bYogqmzrXjutxfNEG_pOgPp_hn0s2-Sbp_fqlZ6d-4-8a7FTEvmmSniRK7KqPX4QaUCAuRJNo"/>
+</div>
+<div class="absolute -bottom-8 -left-8 glass-card p-8 rounded-[32px] max-w-sm shadow-xl">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="eco">eco</span>
+<div class="font-label-caps text-label-caps text-primary">SUSTAINABILITY CERTIFIED</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Carbon-neutral energy production through circular economy principles and advanced biomass engineering.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid - Magazine Style -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop space-y-section-gap-desktop pb-section-gap-desktop">
+<!-- Sawdust & Groundnut (Main Feature) -->
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 lg:col-span-8 group relative overflow-hidden rounded-[48px] h-[700px] ambient-glow transition-all duration-700">
+<img alt="Sawdust Pellets" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLudrAfW8c3o8y_of9ckFB-8-feUvfZxDmw3AdOnspBFsoyE2MctWdV54ENawwi_vjbEQ76KkPbYVxJV26YnoNT-76d-iuYTr5vstsoYYagsoZuJd7DBlXNNWWozddO2l0jW4dBfRlvGzpzu17sAFFZRXVVTvKAE6v4lh48NPrt2932TC4bYogqmzrXjutxfNEG_pOgPp_hn0s2-Sbp_fqlZ6d-4-8a7FTEvmmSniRK7KqPX4QaUCAuRJNo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-12 text-white">
+<span class="font-technical-data text-technical-data bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full mb-4 inline-block">FLAGSHIP PRODUCT</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Sawdust &amp; Groundnut Shell Pellets</h2>
+<div class="flex gap-12 border-t border-white/20 pt-8">
+<div>
+<p class="font-technical-data text-technical-data opacity-60 mb-1 uppercase">Calorific Value</p>
+<p class="font-headline-lg text-[32px]">4200 - 4500 Kcal/kg</p>
+</div>
+<div>
+<p class="font-technical-data text-technical-data opacity-60 mb-1 uppercase">Moisture Content</p>
+<p class="font-headline-lg text-[32px]">&lt; 8.0%</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 flex flex-col justify-center space-y-8 p-6">
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-4">PRIMARY APPLICATIONS</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Industrial Boilers &amp; Furnaces</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Power Generation Plants</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span> Textile &amp; Chemical Processing</li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-caps text-label-caps text-primary mb-4">CORE BENEFITS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Low ash content (under 2%) minimizes maintenance while high density ensures logistical efficiency and stable combustion.</p>
+</div>
+<button class="w-full py-5 rounded-full border-2 border-primary text-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all flex items-center justify-center gap-3">
+                        DOWNLOAD DATA SHEET
+                        <span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Mustard Fuel & Biomass Briquettes (Asymmetric Pair) -->
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-5 space-y-12">
+<div class="bg-surface-container rounded-[48px] p-12 hover:bg-surface-container-high transition-colors">
+<div class="w-20 h-20 bg-primary-container rounded-3xl mb-8 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-4xl" data-icon="fire_extinguisher">fire_extinguisher</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-[36px] mb-4">Mustard Fuel Pellets</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Specifically engineered for high-temperature stability, our mustard residue pellets offer a sustainable alternative with excellent flame retention properties.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-white/50 p-4 rounded-2xl">
+<span class="block font-technical-data text-technical-data opacity-60">ASH CONTENT</span>
+<span class="font-bold">7.0 - 9.0%</span>
+</div>
+<div class="bg-white/50 p-4 rounded-2xl">
+<span class="block font-technical-data text-technical-data opacity-60">DENSITY</span>
+<span class="font-bold">650 kg/m³</span>
+</div>
+</div>
+<button class="font-label-caps text-label-caps text-primary flex items-center gap-2 group">
+                            VIEW SPECIFICATIONS <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7">
+<div class="relative h-full rounded-[48px] overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Close up of stacked industrial biomass briquettes showing their dense texture and geometric shape. The lighting is cinematic, highlighting the technical compression of the organic material. Soft focus background of a high-tech factory floor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClGfvo_z0zIKssVlrCgBE5oZFgeZlVmaaVaz0_DcgsI__G3hHAHe81gBrbfigcJ5WqM3CP-Jo4uXNNvj0yOXslo_LFJhRXKBlvGnP7ZCosZSpnA_WvX6ph1zMM7SuDcPH0Pxwt-Wl4ckcOWRM-IKKXfst7UnvBCtUOMobjdYEGhHEMmm29eh3bQzo5Lwhi5pHZCbTFkPfXR8BkyLAY9aSx3c-Yt2kM5zVD9kVn2rEmVr-UKbc2JViuLH9Yit_xJFmDQNwFeqyTe84"/>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<div class="text-center p-12 text-white scale-90 group-hover:scale-100 transition-transform duration-500">
+<h3 class="font-display-xl text-display-xl-mobile mb-4">Biomass Fuel Briquettes</h3>
+<p class="font-body-lg text-body-lg mb-8 max-w-md mx-auto">High-density compression for long-duration combustion in heavy industrial applications.</p>
+<button class="bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded-full font-label-caps text-label-caps">Explore Briquettes Range</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid - Other Specialty Products -->
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-4 bg-primary text-on-primary rounded-[48px] p-10 flex flex-col justify-between h-[500px]">
+<div>
+<span class="font-label-caps text-label-caps text-tertiary-fixed tracking-widest mb-6 block uppercase">Agricultural Waste Solution</span>
+<h3 class="font-headline-lg text-[40px] leading-tight mb-4">Paddy Husk Fuel Pellets</h3>
+<p class="font-body-md text-body-md opacity-80">Innovative utilization of rice processing residue into a uniform, high-density fuel source.</p>
+</div>
+<div class="border-t border-white/10 pt-8 flex justify-between items-end">
+<div>
+<span class="block text-4xl font-headline-lg">3400+</span>
+<span class="text-xs uppercase opacity-60">Kcal/kg Energy Output</span>
+</div>
+<span class="material-symbols-outlined text-5xl opacity-20" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-8 grid grid-cols-2 gap-grid-gutter">
+<div class="col-span-2 md:col-span-1 bg-surface-container-high rounded-[48px] p-10 h-[500px] flex flex-col">
+<div class="flex-grow">
+<h3 class="font-headline-lg text-[32px] mb-4">Biomass Fuel Pellets (Mixed)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A cost-effective, versatile blend of agricultural residues optimized for consistent boiler feed.</p>
+<ul class="space-y-4">
+<li class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<p class="font-bold">Efficiency</p>
+<p class="text-sm text-on-surface-variant">Uniform size for automated systems</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="savings">savings</span>
+</div>
+<div>
+<p class="font-bold">Cost Savings</p>
+<p class="text-sm text-on-surface-variant">25-40% cheaper than coal</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-span-2 md:col-span-1 relative rounded-[48px] overflow-hidden h-[500px]">
+<img class="w-full h-full object-cover" data-alt="Top-down artistic photograph of assorted biomass pellets arranged in clean, geometric patterns on a white marble surface. The lighting is bright and airy, reflecting a clean energy future. Different textures and shades of brown represent the diversity of source materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnuh5Uz8Fz5OPbI5DFz7c7oqu0bKEXaNTZ3MYuwputhkxqgTiQTFtK6ucVjLOCYi-dEiaT-S2LyXZGfKaa3oZmo1JY2Y8z_tHvq41_ggBSiJyWEJNHIx5dgVDQiqyVMEZL-qlQP5wEJ5JC6Bb3dT0PJAccaiZqQYVwEGyKFFWJnslayVa00BzFhZq-xS0sgJz3uxrjIsa8pNZWK-YzSTiS8EBui6_y68NvsgUchNiVgksnxAXJ9JgHZ35z9MXBFEKMloLR9m_rOa8"/>
+<div class="absolute inset-0 bg-black/20 p-8 flex flex-col justify-end">
+<button class="bg-white/90 backdrop-blur-md text-primary w-full py-4 rounded-2xl font-label-caps text-label-caps hover:bg-white transition-all">Order Samples</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Comparison -->
+<section class="bg-surface-container-low py-section-gap-desktop">
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">ANALYTICAL DATA</span>
+<h2 class="font-headline-lg text-headline-lg">Performance Matrix</h2>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b-2 border-primary">
+<th class="py-6 px-4 text-left font-label-caps text-label-caps">Pellet Type</th>
+<th class="py-6 px-4 text-left font-label-caps text-label-caps">Calorific Value</th>
+<th class="py-6 px-4 text-left font-label-caps text-label-caps">Moisture (%)</th>
+<th class="py-6 px-4 text-left font-label-caps text-label-caps">Ash Content</th>
+<th class="py-6 px-4 text-left font-label-caps text-label-caps">Diameter (mm)</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-outline-variant hover:bg-white/40 transition-colors">
+<td class="py-6 px-4 font-bold">Sawdust / Groundnut</td>
+<td class="py-6 px-4">4200 - 4500 Kcal/kg</td>
+<td class="py-6 px-4">&lt; 8.0</td>
+<td class="py-6 px-4">&lt; 2.0%</td>
+<td class="py-6 px-4">8 - 10 mm</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-white/40 transition-colors">
+<td class="py-6 px-4 font-bold">Mustard Fuel</td>
+<td class="py-6 px-4">3900 - 4200 Kcal/kg</td>
+<td class="py-6 px-4">&lt; 10.0</td>
+<td class="py-6 px-4">7.0 - 9.0%</td>
+<td class="py-6 px-4">10 - 12 mm</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-white/40 transition-colors">
+<td class="py-6 px-4 font-bold">Biomass Briquettes</td>
+<td class="py-6 px-4">3800 - 4100 Kcal/kg</td>
+<td class="py-6 px-4">&lt; 10.0</td>
+<td class="py-6 px-4">8.0 - 10.0%</td>
+<td class="py-6 px-4">60 - 90 mm</td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-white/40 transition-colors">
+<td class="py-6 px-4 font-bold">Paddy Husk</td>
+<td class="py-6 px-4">3400 - 3600 Kcal/kg</td>
+<td class="py-6 px-4">&lt; 12.0</td>
+<td class="py-6 px-4">15.0 - 18.0%</td>
+<td class="py-6 px-4">10 - 12 mm</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-container-max-width mx-auto px-grid-margin-desktop py-section-gap-desktop">
+<div class="bg-primary rounded-[64px] p-16 md:p-24 text-center text-on-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 100 C 20 0 50 0 100 100" fill="none" stroke="white" stroke-width="0.1"></path>
+<path d="M0 80 C 30 20 60 20 100 80" fill="none" stroke="white" stroke-width="0.1"></path>
+</svg>
+</div>
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl mb-8">Ready to Transition?</h2>
+<p class="font-body-lg text-body-lg max-w-2xl mx-auto mb-12 opacity-80">Consult with our thermal engineering experts to find the optimal biomass solution for your specific industrial requirements.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-tertiary-container text-on-tertiary-container px-12 py-6 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform">Get a Quote</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-12 py-6 rounded-full font-label-caps text-label-caps hover:bg-white/20 transition-all">Schedule a Call</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap-desktop pb-10 bg-primary dark:bg-primary">
+<div class="grid grid-cols-12 gap-grid-gutter max-w-container-max-width mx-auto px-grid-margin-desktop mb-20">
+<div class="col-span-12 lg:col-span-4">
+<div class="font-headline-lg text-headline-lg text-white mb-8">Green Pellets India</div>
+<p class="text-on-primary/70 font-body-md text-body-md mb-8 max-w-sm">Driving industrial decarbonization through innovative biomass energy solutions and engineering excellence.</p>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h4 class="font-label-caps text-label-caps text-white mb-6">PRODUCTS</h4>
+<ul class="space-y-4 font-body-md text-body-md text-on-primary/70">
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Sawdust Pellets</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Biomass Briquettes</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Mustard Fuel</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Custom Blends</a></li>
+</ul>
+</div>
+<div class="col-span-6 lg:col-span-2">
+<h4 class="font-label-caps text-label-caps text-white mb-6">RESOURCES</h4>
+<ul class="space-y-4 font-body-md text-body-md text-on-primary/70">
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Sustainability Report</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Technical Guides</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Case Studies</a></li>
+<li><a class="hover:text-tertiary-fixed-dim transition-all" href="#">Investor Relations</a></li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-4">
+<h4 class="font-label-caps text-label-caps text-white mb-6">NEWSLETTER</h4>
+<div class="relative">
+<input class="w-full bg-white/5 border border-white/20 rounded-full px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-tertiary-fixed-dim" placeholder="Email Address" type="email"/>
+<button class="absolute right-2 top-2 bg-tertiary-fixed text-on-tertiary-fixed px-6 py-2 rounded-full font-label-caps text-label-caps">JOIN</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max-width mx-auto px-grid-margin-desktop pt-10 border-t border-white/10 flex flex-col md:row justify-between gap-6">
+<p class="text-on-primary/70 font-body-md text-body-md">© 2024 Green Pellets India. All rights reserved.</p>
+<div class="flex flex-wrap gap-8">
+<a class="text-on-primary/70 hover:text-tertiary-fixed-dim font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-primary/70 hover:text-tertiary-fixed-dim font-body-md text-body-md" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
