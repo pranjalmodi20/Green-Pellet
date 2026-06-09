@@ -82,7 +82,7 @@ const Home = () => {
       const allFailed = [configRes, metricsRes, productsRes, industriesRes, testimonialsRes]
         .every((r) => r.status === 'rejected');
 
-      if (allFailed) {
+      if (allFailed && import.meta.env.DEV) {
         setError('Unable to connect to the server. Showing default content.');
       }
 
