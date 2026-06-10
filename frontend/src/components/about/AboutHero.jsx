@@ -9,7 +9,7 @@ const AboutHero = ({ hero, companyStory }) => {
   const { text } = companyStory;
 
   return (
-    <section className="relative h-[819px] flex items-center overflow-hidden">
+    <section className="relative min-h-screen pt-32 pb-16 flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           className="w-full h-full object-cover grayscale-[20%] brightness-75"

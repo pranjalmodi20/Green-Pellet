@@ -24,7 +24,7 @@ const MissionVisionSection = ({ purpose, vision, mission }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-headline-lg text-headline-lg mb-8 leading-tight"
+            className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8 leading-tight"
           >
             {purpose.title}
           </motion.h2>
@@ -48,7 +48,7 @@ const MissionVisionSection = ({ purpose, vision, mission }) => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={viewportOnce}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="md:col-span-7 h-[600px] rounded-[48px] overflow-hidden"
+          className="md:col-span-7 h-[300px] md:h-[600px] rounded-[48px] overflow-hidden"
         >
           <img
             className="w-full h-full object-cover"

@@ -45,8 +45,8 @@ const HeroSection = ({ config = {}, metrics = {} }) => {
           </div>
         </div>
         {/* Real-time Metrics Card */}
-        <div className="hidden lg:flex col-span-5 items-center justify-end">
-          <div className="glass-panel p-10 rounded-[48px] ambient-glow space-y-8 w-full max-w-sm transform translate-y-12">
+        <div className="col-span-12 lg:col-span-5 flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
+          <div className="glass-panel p-10 rounded-[48px] ambient-glow space-y-8 w-full max-w-sm transform translate-y-0 lg:translate-y-12">
             <div className="space-y-2">
               <span className="font-technical-data text-technical-data text-primary/60 uppercase">Real-time Impact</span>
               <div className="h-px w-full bg-primary/10"></div>

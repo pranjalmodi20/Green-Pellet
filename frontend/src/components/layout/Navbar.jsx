@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
         <div className="flex justify-between items-center max-w-container-max-width mx-auto px-grid-margin-desktop py-6">
-          <Link to="/" className="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed tracking-tighter">
+          <Link to="/" className="font-headline-lg text-2xl md:text-headline-lg text-primary dark:text-primary-fixed tracking-tighter">
             Green Pellets India
           </Link>
           <div className="hidden md:flex space-x-8">

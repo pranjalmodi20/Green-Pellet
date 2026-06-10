@@ -33,7 +33,7 @@ const ProductShowcase = ({ products = [] }) => {
         <div className="flex flex-col lg:flex-row justify-between items-end mb-24">
           <div className="max-w-2xl">
             <span className="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase tracking-widest mb-4 block">Our Products</span>
-            <h2 className="font-headline-lg text-headline-lg mb-8">Engineering Higher Caloric Performance</h2>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">Engineering Higher Caloric Performance</h2>
           </div>
           <button className="border border-on-primary/30 px-8 py-4 rounded-full font-label-caps text-label-caps hover:bg-on-primary hover:text-primary transition-all mb-8 lg:mb-0">Technical Datasheets</button>
         </div>

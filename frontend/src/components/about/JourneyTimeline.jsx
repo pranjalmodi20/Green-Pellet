@@ -16,16 +16,16 @@ const TimelineEntry = ({ entry, index }) => {
     >
       {isLeft ? (
         <>
-          <div className="md:text-right">
+          <div className="text-left md:text-right">
             <span
-              className={`font-display-xl text-headline-lg text-tertiary-fixed transition-opacity duration-300 ${
+              className={`font-display-xl text-headline-lg-mobile md:text-headline-lg text-tertiary-fixed transition-opacity duration-300 ${
                 hovered ? 'opacity-100' : 'opacity-50'
               }`}
             >
               {entry.year}
             </span>
             <h4 className="font-headline-lg text-headline-lg-mobile mb-4">{entry.title}</h4>
-            <p className="text-on-primary/70 max-w-md ml-auto">{entry.description}</p>
+            <p className="text-on-primary/70 max-w-md ml-0 md:ml-auto">{entry.description}</p>
           </div>
           <div className="hidden md:flex justify-start">
             <motion.div
@@ -44,9 +44,9 @@ const TimelineEntry = ({ entry, index }) => {
               className="w-4 h-4 bg-tertiary-fixed rounded-full absolute left-1/2 transform -translate-x-1/2 shadow-[0_0_15px_rgba(203,167,47,0.8)]"
             />
           </div>
-          <div className="md:pl-12">
+          <div className="md:pl-12 text-left">
             <span
-              className={`font-display-xl text-headline-lg text-tertiary-fixed transition-opacity duration-300 ${
+              className={`font-display-xl text-headline-lg-mobile md:text-headline-lg text-tertiary-fixed transition-opacity duration-300 ${
                 hovered ? 'opacity-100' : 'opacity-50'
               }`}
             >
@@ -77,7 +77,7 @@ const JourneyTimeline = ({ timeline }) => {
           <span className="font-label-caps text-tertiary-fixed tracking-widest block mb-4">
             {timeline.badge}
           </span>
-          <h2 className="font-headline-lg text-headline-lg">{timeline.title}</h2>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg">{timeline.title}</h2>
         </motion.div>
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full timeline-line hidden md:block" />

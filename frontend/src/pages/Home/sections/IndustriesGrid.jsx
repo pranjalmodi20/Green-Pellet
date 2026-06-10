@@ -43,29 +43,29 @@ const IndustriesGrid = ({ industries = [] }) => {
       <div className="max-w-container-max-width mx-auto px-grid-margin-desktop">
         <div className="text-center mb-24">
           <span className="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4 block">Market Reach</span>
-          <h2 className="font-headline-lg text-headline-lg text-primary">Powering Diverse Industries</h2>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Powering Diverse Industries</h2>
         </div>
-        <div className="grid grid-cols-12 grid-rows-2 gap-grid-gutter h-auto lg:h-[800px]">
+        <div className="grid grid-cols-12 lg:grid-rows-2 gap-grid-gutter h-auto lg:h-[800px]">
           {/* Main Bento Item */}
-          <div className="col-span-12 lg:col-span-7 row-span-1 lg:row-span-2 glass-panel rounded-[48px] overflow-hidden relative group">
+          <div className="col-span-12 lg:col-span-7 row-span-1 lg:row-span-2 min-h-[350px] lg:min-h-0 glass-panel rounded-[48px] overflow-hidden relative group">
             <img 
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
               src={heroTile.image} 
               alt={heroTile.title}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-12">
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-6 md:p-12">
               <h3 className="font-headline-lg text-on-primary mb-4">{heroTile.title}</h3>
               <p className="font-body-lg text-on-primary/80 max-w-md">{heroTile.description}</p>
             </div>
           </div>
           {/* Secondary Bento Item */}
-          <div className="col-span-12 lg:col-span-5 row-span-1 glass-panel rounded-[48px] overflow-hidden relative group">
+          <div className="col-span-12 lg:col-span-5 row-span-1 min-h-[250px] lg:min-h-0 glass-panel rounded-[48px] overflow-hidden relative group">
             <img 
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
               src={mediumTile.image} 
               alt={mediumTile.title}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-8">
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent flex flex-col justify-end p-6 md:p-8">
               <h3 className="font-headline-lg text-2xl text-on-primary mb-2">{mediumTile.title}</h3>
               <p className="font-body-md text-on-primary/80">{mediumTile.description}</p>
             </div>

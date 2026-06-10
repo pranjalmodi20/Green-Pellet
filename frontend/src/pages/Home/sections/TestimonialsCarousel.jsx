@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const TestimonialsCarousel = ({ testimonials = [] }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const containerRef = useRef(null);
 
   const defaultTestimonials = [
     {
@@ -33,20 +33,22 @@ const TestimonialsCarousel = ({ testimonials = [] }) => {
   const displayTestimonials = testimonials && testimonials.length > 0 ? testimonials : defaultTestimonials;
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? Math.max(0, displayTestimonials.length - 3) : prev - 1));
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: -containerRef.current.offsetWidth, behavior: 'smooth' });
+    }
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev >= displayTestimonials.length - 3 ? 0 : prev + 1));
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: containerRef.current.offsetWidth, behavior: 'smooth' });
+    }
   };
-
-  const visibleTestimonials = displayTestimonials.slice(currentIndex, currentIndex + 3);
 
   return (
     <section className="py-section-gap-desktop bg-surface-container-low">
       <div className="max-w-container-max-width mx-auto px-grid-margin-desktop">
         <div className="flex flex-col lg:flex-row items-center justify-between mb-24">
-          <h2 className="font-headline-lg text-headline-lg text-primary mb-8 lg:mb-0">Executive Voices</h2>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8 lg:mb-0">Executive Voices</h2>
           <div className="flex space-x-4">
             <button 
               onClick={handlePrev} 
@@ -62,9 +64,12 @@ const TestimonialsCarousel = ({ testimonials = [] }) => {
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
-          {visibleTestimonials.map((item) => (
-            <div key={item._id} className="glass-panel p-12 rounded-[48px] ambient-glow flex flex-col justify-between min-h-[400px]">
+        <div 
+          ref={containerRef}
+          className="flex lg:grid lg:grid-cols-3 gap-grid-gutter overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar pb-8 lg:pb-0"
+        >
+          {displayTestimonials.map((item) => (
+            <div key={item._id} className="w-[calc(100vw-40px)] md:w-[calc(50vw-36px)] lg:w-auto flex-shrink-0 snap-center glass-panel p-6 md:p-12 rounded-[48px] ambient-glow flex flex-col justify-between min-h-[380px] md:min-h-[400px]">
               <span className="material-symbols-outlined text-6xl text-primary/10" style={{ fontVariationSettings: "'FILL' 1" }}>format_quote</span>
               <p className="font-body-lg text-on-surface text-xl leading-relaxed mb-8">"{item.quote || item.content}"</p>
               <div className="flex items-center space-x-4">

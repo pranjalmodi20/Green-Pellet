@@ -151,3 +151,45 @@ body {
 .timeline-line {
   background: linear-gradient(to bottom, transparent, #cba72f, transparent);
 }
+
+/* Responsive Grid Padding & Margins Overrides */
+.px-grid-margin-desktop {
+  padding-inline: 20px !important;
+}
+@media (min-width: 768px) {
+  .px-grid-margin-desktop {
+    padding-inline: 40px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .px-grid-margin-desktop {
+    padding-inline: var(--spacing-grid-margin-desktop) !important; /* 64px */
+  }
+}
+
+.py-section-gap-desktop {
+  padding-block: var(--spacing-section-gap-mobile) !important; /* 80px */
+}
+@media (min-width: 768px) {
+  .py-section-gap-desktop {
+    padding-block: var(--spacing-section-gap-desktop) !important; /* 160px */
+  }
+}
+
+.pt-section-gap-desktop {
+  padding-top: var(--spacing-section-gap-mobile) !important; /* 80px */
+}
+@media (min-width: 768px) {
+  .pt-section-gap-desktop {
+    padding-top: var(--spacing-section-gap-desktop) !important; /* 160px */
+  }
+}
+
+/* Hide scrollbars for carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

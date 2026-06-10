@@ -29,15 +29,15 @@ const CrisisSection = ({ config = {} }) => {
           </div>
           <div className="col-span-12 lg:col-span-6 lg:offset-1 order-1 lg:order-2 space-y-8">
             <span className="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">{badge}</span>
-            <h2 className="font-headline-lg text-headline-lg text-primary">{title}</h2>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">{title}</h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant">{description}</p>
-            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-outline-variant/30">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-outline-variant/30">
               <div>
-                <span className="font-headline-lg text-headline-lg text-primary">{stat1Value}</span>
+                <span className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">{stat1Value}</span>
                 <p className="font-technical-data text-technical-data text-on-surface-variant">{stat1Label}</p>
               </div>
               <div>
-                <span className="font-headline-lg text-headline-lg text-primary">{stat2Value}</span>
+                <span className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">{stat2Value}</span>
                 <p className="font-technical-data text-technical-data text-on-surface-variant">{stat2Label}</p>
               </div>
             </div>

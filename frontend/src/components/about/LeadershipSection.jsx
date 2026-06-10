@@ -18,7 +18,7 @@ const LeadershipSection = ({ leadership }) => {
         <span className="font-label-caps text-primary tracking-widest block mb-4 uppercase">
           {leadership.badge}
         </span>
-        <h2 className="font-headline-lg text-headline-lg">{leadership.title}</h2>
+        <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg">{leadership.title}</h2>
       </motion.div>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-3 gap-8"

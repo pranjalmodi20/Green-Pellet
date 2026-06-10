@@ -12,7 +12,7 @@ const AchievementsSection = ({ achievements }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={viewportOnce}
         transition={{ duration: 0.7 }}
-        className="font-headline-lg text-headline-lg mb-16"
+        className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-16"
       >
         {achievements.title}
       </motion.h2>

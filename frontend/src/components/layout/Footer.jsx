@@ -28,7 +28,7 @@ const Footer = () => {
     <footer className="w-full pt-section-gap-desktop pb-10 bg-primary dark:bg-primary text-on-primary">
       <div className="grid grid-cols-12 gap-grid-gutter max-w-container-max-width mx-auto px-grid-margin-desktop mb-20">
         <div className="col-span-12 lg:col-span-4 space-y-8">
-          <Link to="/" className="font-headline-lg text-headline-lg text-white block">
+          <Link to="/" className="font-headline-lg text-2xl md:text-headline-lg text-white block">
             Green Pellets India
           </Link>
           <p className="font-body-md text-on-primary/70 max-w-xs">

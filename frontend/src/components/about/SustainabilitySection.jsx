@@ -32,16 +32,16 @@ const SustainabilitySection = ({ sustainability }) => {
             <motion.span variants={fadeUp} className="font-label-caps text-primary tracking-widest block mb-4 uppercase">
               {sustainability.badge}
             </motion.span>
-            <motion.h2 variants={fadeUp} className="font-headline-lg text-headline-lg mb-8">
+            <motion.h2 variants={fadeUp} className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">
               {sustainability.title}
             </motion.h2>
-            <motion.p variants={fadeUp} className="font-body-lg text-on-surface-variant mb-10 leading-relaxed">
+            <motion.p variants={fadeUp} className="font-body-lg text-body-lg text-on-surface-variant mb-10 leading-relaxed">
               {sustainability.description}
             </motion.p>
-            <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-8">
+            <motion.div variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {sustainability.stats?.map((stat, index) => (
                 <motion.div key={`${stat.label}-${index}`} variants={fadeUp}>
-                  <h5 className="font-display-xl text-headline-lg text-primary mb-1">{stat.value}</h5>
+                  <h5 className="font-display-xl text-headline-lg-mobile md:text-headline-lg text-primary mb-1">{stat.value}</h5>
                   <p className="font-technical-data text-on-surface-variant uppercase tracking-widest">
                     {stat.label}
                   </p>
