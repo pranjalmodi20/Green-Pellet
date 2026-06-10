@@ -21,6 +21,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/auth',          require('./routes/auth'));
 app.use('/api/home',          require('./routes/home'));
 app.use('/api/products',      require('./routes/products'));
+app.use('/api/product-categories', require('./routes/categories'));
+app.use('/api/upload', require('./routes/uploadRoutes'));
 app.use('/api/industries',    require('./routes/industries'));
 app.use('/api/testimonials',  require('./routes/testimonials'));
 app.use('/api/newsletter',    require('./routes/newsletter'));

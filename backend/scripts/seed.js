@@ -10,6 +10,8 @@ const Industry = require('../models/Industry');
 const HomeConfig = require('../models/HomeConfig');
 const AboutPage = require('../models/AboutPage');
 const WhyBiomassPage = require('../models/WhyBiomassPage');
+const ProductCategory = require('../models/ProductCategory');
+const ProductsHeroConfig = require('../models/ProductsHeroConfig');
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/green_pellet';
 
@@ -72,29 +74,188 @@ const seed = async () => {
     await Metric.create({ tonsProcessed: 1200000, co2Offset: 450000 });
     console.log('🌱 Impact metrics stats seeded');
 
+    // 3.5 Seed Categories
+    await ProductCategory.deleteMany({});
+    const categories = await ProductCategory.insertMany([
+      { name: 'Wood Residues', slug: 'wood-residues', description: 'Premium wood sawdust and forestry processing waste pellets.' },
+      { name: 'Agri-Waste', slug: 'agri-waste', description: 'Agricultural crop residues including mustard stalks and paddy husks.' },
+      { name: 'High Density Compression', slug: 'high-density-compression', description: 'Dense compressed logs and briquettes for long duration combustion.' }
+    ]);
+    const [woodRes, agriWaste, highComp] = categories;
+    console.log('🌱 Product categories seeded');
+
     // 4. Seed Products
     await Product.deleteMany({});
     await Product.insertMany([
       {
-        title: 'Premium Pine Pellets',
-        description: 'Ultra-low ash content (< 0.5%) designed for residential heating and sensitive industrial boilers.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD41fVSdNEuCUamuGfDfPqku0qNGCdkP3864alvXCpK5I5H5LYF8MPNsNu51PdrVhEo8W6_GR3ocSkoNF8UdNRx_IsS6aLDBuY56qdfS4V1Mz_Wvw_UrxFH3lsB2QJJ3Fp4OMTQ2a95f1gSjZsm4JLpPGd3BNPXq6rsN7rDhEFL0zhekU-_6AlVCZk1MiqOLYopLL1ACOUW_jFFWP-WxuiHr-3sqS47axIIfX1N8r29Tq9B1E_J3lPOn62tBCfz-byiz-DIpyWy6Q8',
-        spec: '4800 kcal/kg Avg.',
-        order: 1
+        title: 'Sawdust & Groundnut Shell Pellets',
+        slug: 'sawdust-groundnut-pellets',
+        category: woodRes._id,
+        shortDescription: 'Low ash content minimizes boiler maintenance while high density ensures logistical efficiency and stable combustion.',
+        fullDescription: 'Our flagship pellet range engineered from a refined mix of sawdust and groundnut shell residues. Provides a reliable, consistent burn rate matching the performance of conventional fuels.',
+        image: 'https://lh3.googleusercontent.com/aida/AP1WRLudrAfW8c3o8y_of9ckFB-8-feUvfZxDmw3AdOnspBFsoyE2MctWdV54ENawwi_vjbEQ76KkPbYVxJV26YnoNT-76d-iuYTr5vstsoYYagsoZuJd7DBlXNNWWozddO2l0jW4dBfRlvGzpzu17sAFFZRXVVTvKAE6v4lh48NPrt2932TC4bYogqmzrXjutxfNEG_pOgPp_hn0s2-Sbp_fqlZ6d-4-8a7FTEvmmSniRK7KqPX4QaUCAuRJNo',
+        specifications: [
+          { parameter: 'Calorific Value', value: '4200 - 4500', unit: 'Kcal/kg' },
+          { parameter: 'Moisture Content', value: '< 8.0', unit: '%' }
+        ],
+        spec: '4200 - 4500 Kcal/kg Avg.',
+        benefits: [
+          'Low ash content (< 2%) minimizes slagging',
+          'Highly dense uniform size for automated feed systems',
+          'Virtually zero sulfur or toxic emissions'
+        ],
+        applications: [
+          'Industrial Boilers & Furnaces',
+          'Power Generation Plants',
+          'Textile & Chemical Processing'
+        ],
+        technicalData: {
+          ash: '< 2.0%',
+          moisture: '< 8.0%',
+          density: '650 kg/m³',
+          diameter: '8 - 10 mm'
+        },
+        featured: true,
+        displayOrder: 1,
+        order: 1,
+        status: 'active',
+        isActive: true
       },
       {
-        title: 'Industrial Grade-A',
-        description: 'High-performance blend optimized for cement kilns and large-scale power plants.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuPhXLOx-gkxbOPlGuprKyPeumyYTuGuYdJG1jIIXDLrrczqolLv96oIo4agGvya8gz6f9pgTtCLzSLoH--xEsuXx5VmQ99yQgiKDosI1zaN9e9zMmRWI1kq2N9yfx1vlUK9YX0BCLrTEy0VZXoz9g5BFfe0YZyxwM4-DD8chZrFqlQeOblX0r6KbZzwmdugcfL2_hTUKsQ7Ym5vwSMtH4LlqkY5lJi_5GsLhUB9Xz4NDPgU-sRbNG_1IpGpxKucUC0a5u-cU0M0Hg',
-        spec: '4200 kcal/kg Avg.',
-        order: 2
+        title: 'Mustard Fuel Pellets',
+        slug: 'mustard-fuel-pellets',
+        category: agriWaste._id,
+        shortDescription: 'Specifically engineered for high-temperature stability, our mustard residue pellets offer a sustainable alternative.',
+        fullDescription: 'Harnesses agricultural mustard crop residues. Offers excellent flame retention and high heat output, optimized for heavy load industrial boilers.',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuClGfvo_z0zIKssVlrCgBE5oZFgeZlVmaaVaz0_DcgsI__G3hHAHe81gBrbfigcJ5WqM3CP-Jo4uXNNvj0yOXslo_LFJhRXKBlvGnP7ZCosZSpnA_WvX6ph1zMM7SuDcPH0Pxwt-Wl4ckcOWRM-IKKXfst7UnvBCtUOMobjdYEGhHEMmm29eh3bQzo5Lwhi5pHZCbTFkPfXR8BkyLAY9aSx3c-Yt2kM5zVD9kVn2rEmVr-UKbc2JViuLH9Yit_xJFmDQNwFeqyTe84',
+        specifications: [
+          { parameter: 'Calorific Value', value: '3900 - 4200', unit: 'Kcal/kg' },
+          { parameter: 'Moisture Content', value: '< 10.0', unit: '%' }
+        ],
+        spec: '3900 - 4200 Kcal/kg Avg.',
+        benefits: [
+          'High flame retention time',
+          'Cost-effective boiler energy alternative',
+          'Helps prevent open field stubble burning'
+        ],
+        applications: [
+          'Medium scale thermal boilers',
+          'Co-firing brick kilns',
+          'Industrial steam applications'
+        ],
+        technicalData: {
+          ash: '7.0 - 9.0%',
+          moisture: '< 10.0%',
+          density: '650 kg/m³',
+          diameter: '10 - 12 mm'
+        },
+        featured: false,
+        displayOrder: 2,
+        order: 2,
+        status: 'active',
+        isActive: true
       },
       {
-        title: 'Rice Husk Briquettes',
-        description: 'Sustainable solution for brick kilns and rural energy generation at scale.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhzHEZ4aCZA00pUNrnGzuWyyyvR2IwHWkVyfwt265xDifzxAKzoX0qsE1Ceafm5gG6zbnfidGFrQuklHCYTAvG7-mlWxCWAMiTCaWuerxTNH3n86MLeuVGnw59rX22mjrkFbch6hoPQsoeHt7H4zejampQ4SI-t6NJgG7KNsa8QCIrKHA2h6NABwj8BPkv30nl8bAGs3JBXZtiIZE7vIB3eY_2OJsL6eQKvX8NucqkVWeCvlYyx8AXnIStX2zfy2kT5If6ituFVRg',
-        spec: '3800 kcal/kg Avg.',
-        order: 3
+        title: 'Biomass Fuel Briquettes',
+        slug: 'biomass-fuel-briquettes',
+        category: highComp._id,
+        shortDescription: 'High-density compression for long-duration combustion in heavy industrial applications.',
+        fullDescription: 'Large diameter compressed logs ideal for manual-feed boilers, gasifiers, and brick kilns where slow, uniform energy output is critical.',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuClGfvo_z0zIKssVlrCgBE5oZFgeZlVmaaVaz0_DcgsI__G3hHAHe81gBrbfigcJ5WqM3CP-Jo4uXNNvj0yOXslo_LFJhRXKBlvGnP7ZCosZSpnA_WvX6ph1zMM7SuDcPH0Pxwt-Wl4ckcOWRM-IKKXfst7UnvBCtUOMobjdYEGhHEMmm29eh3bQzo5Lwhi5pHZCbTFkPfXR8BkyLAY9aSx3c-Yt2kM5zVD9kVn2rEmVr-UKbc2JViuLH9Yit_xJFmDQNwFeqyTe84',
+        specifications: [
+          { parameter: 'Calorific Value', value: '3800 - 4100', unit: 'Kcal/kg' },
+          { parameter: 'Moisture Content', value: '< 10.0', unit: '%' }
+        ],
+        spec: '3800 - 4100 Kcal/kg Avg.',
+        benefits: [
+          'Slow continuous burn profile',
+          'High bulk density for space-saving storage',
+          'No chemical binders used in production'
+        ],
+        applications: [
+          'Brick Kilns',
+          'Industrial Gasifiers',
+          'Manual Feed Boilers'
+        ],
+        technicalData: {
+          ash: '8.0 - 10.0%',
+          moisture: '< 10.0%',
+          density: '750 kg/m³',
+          diameter: '60 - 90 mm'
+        },
+        featured: false,
+        displayOrder: 3,
+        order: 3,
+        status: 'active',
+        isActive: true
+      },
+      {
+        title: 'Paddy Husk Fuel Pellets',
+        slug: 'paddy-husk-pellets',
+        category: agriWaste._id,
+        shortDescription: 'Innovative utilization of rice processing residue into a uniform, high-density fuel source.',
+        fullDescription: 'Paddy husk based fuel pellets designed as a low-cost, steady-burning drop-in fuel for automated boiler systems.',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCnuh5Uz8Fz5OPbI5DFz7c7oqu0bKEXaNTZ3MYuwputhkxqgTiQTFtK6ucVjLOCYi-dEiaT-S2LyXZGfKaa3oZmo1JY2Y8z_tHvq41_ggBSiJyWEJNHIx5dgVDQiqyVMEZL-qlQP5wEJ5JC6Bb3dT0PJAccaiZqQYVwEGyKFFWJnslayVa00BzFhZq-xS0sgJz3uxrjIsa8pNZWK-YzSTiS8EBui6_y68NvsgUchNiVgksnxAXJ9JgHZ35z9MXBFEKMloLR9m_rOa8',
+        specifications: [
+          { parameter: 'Calorific Value', value: '3400 - 3600', unit: 'Kcal/kg' },
+          { parameter: 'Moisture Content', value: '< 12.0', unit: '%' }
+        ],
+        spec: '3400 - 3600 Kcal/kg Avg.',
+        benefits: [
+          'Abundant feedstock supply',
+          'Very economical fuel pricing',
+          'Excellent carbon reduction metrics'
+        ],
+        applications: [
+          'Industrial heaters',
+          'Paddy drying units',
+          'Fluidized bed combustion boilers'
+        ],
+        technicalData: {
+          ash: '15.0 - 18.0%',
+          moisture: '< 12.0%',
+          density: '600 kg/m³',
+          diameter: '10 - 12 mm'
+        },
+        featured: false,
+        displayOrder: 4,
+        order: 4,
+        status: 'active',
+        isActive: true
+      },
+      {
+        title: 'Biomass Fuel Pellets (Mixed)',
+        slug: 'mixed-biomass-pellets',
+        category: agriWaste._id,
+        shortDescription: 'A cost-effective, versatile blend of agricultural residues optimized for consistent boiler feed.',
+        fullDescription: 'A balanced mixture of straw, husks, and agricultural residues offering general purpose industrial heating capabilities.',
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCnuh5Uz8Fz5OPbI5DFz7c7oqu0bKEXaNTZ3MYuwputhkxqgTiQTFtK6ucVjLOCYi-dEiaT-S2LyXZGfKaa3oZmo1JY2Y8z_tHvq41_ggBSiJyWEJNHIx5dgVDQiqyVMEZL-qlQP5wEGyKFFWJnslayVa00BzFhZq-xS0sgJz3uxrjIsa8pNZWK-YzSTiS8EBui6_y68NvsgUchNiVgksnxAXJ9JgHZ35z9MXBFEKMloLR9m_rOa8',
+        specifications: [
+          { parameter: 'Calorific Value', value: '3600 - 3900', unit: 'Kcal/kg' },
+          { parameter: 'Moisture Content', value: '< 10.0', unit: '%' }
+        ],
+        spec: '3600 - 3900 Kcal/kg Avg.',
+        benefits: [
+          'Extremely cost-effective alternative',
+          'Standardized density for consistent feeding',
+          'Fully renewable sourcing'
+        ],
+        applications: [
+          'General industrial heating',
+          'Co-firing installations',
+          'Food processing steam'
+        ],
+        technicalData: {
+          ash: '10.0 - 12.0%',
+          moisture: '< 10.0%',
+          density: '620 kg/m³',
+          diameter: '8 - 10 mm'
+        },
+        featured: false,
+        displayOrder: 5,
+        order: 5,
+        status: 'active',
+        isActive: true
       }
     ]);
     console.log('🌱 Products showcase database seeded');
@@ -170,6 +331,11 @@ const seed = async () => {
     await WhyBiomassPage.deleteMany({});
     await WhyBiomassPage.create({});
     console.log('🌱 Why Biomass page content seeded');
+
+    // 9. Seed Our Products Page configs
+    await ProductsHeroConfig.deleteMany({});
+    await ProductsHeroConfig.create({});
+    console.log('🌱 Products page config seeded');
 
     console.log('✅ Seeding complete!');
     process.exit(0);

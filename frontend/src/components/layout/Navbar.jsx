@@ -26,7 +26,7 @@ const Navbar = () => {
             <Link className={linkClass('/')} to="/">Home</Link>
             <Link className={linkClass('/about')} to="/about">About Us</Link>
             <Link className={linkClass('/why-biomass')} to="/why-biomass">Why Biomass</Link>
-            <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" to="/products">Our Products</Link>
+            <Link className={linkClass('/products')} to="/products">Our Products</Link>
             <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" to="/industries">Industries</Link>
             <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" to="/blogs">Blogs</Link>
             <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" to="/contact">Contact</Link>
