@@ -48,7 +48,7 @@ const Footer = () => {
           <ul className="space-y-4">
             <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/">Home</Link></li>
             <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/about">About Us</Link></li>
-            <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/why-biomass">Technology</Link></li>
+            <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/why-biomass">Why Biomass</Link></li>
             <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/industries">Impact</Link></li>
           </ul>
         </div>

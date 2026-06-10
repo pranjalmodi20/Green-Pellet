@@ -25,6 +25,7 @@ app.use('/api/industries',    require('./routes/industries'));
 app.use('/api/testimonials',  require('./routes/testimonials'));
 app.use('/api/newsletter',    require('./routes/newsletter'));
 app.use('/api/about',         require('./routes/about'));
+app.use('/api/why-biomass',   require('./routes/whyBiomass'));
 
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date() }));

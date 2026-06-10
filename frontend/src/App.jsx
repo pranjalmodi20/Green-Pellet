@@ -4,12 +4,15 @@ import Layout from './components/layout/Layout';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import AboutEditor from './pages/Admin/AdminAbout/AboutEditor';
+import WhyBiomass from './pages/WhyBiomass/WhyBiomass';
+import WhyBiomassEditor from './pages/Admin/AdminWhyBiomass/WhyBiomassEditor';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/admin/about" element={<AboutEditor />} />
+        <Route path="/admin/why-biomass" element={<WhyBiomassEditor />} />
         <Route
           path="/*"
           element={
@@ -17,6 +20,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/why-biomass" element={<WhyBiomass />} />
               </Routes>
             </Layout>
           }

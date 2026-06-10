@@ -9,6 +9,7 @@ const Product = require('../models/Product');
 const Industry = require('../models/Industry');
 const HomeConfig = require('../models/HomeConfig');
 const AboutPage = require('../models/AboutPage');
+const WhyBiomassPage = require('../models/WhyBiomassPage');
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/green_pellet';
 
@@ -164,6 +165,11 @@ const seed = async () => {
     await AboutPage.deleteMany({});
     await AboutPage.create({});
     console.log('🌱 About page content seeded');
+
+    // 8. Seed Why Biomass Page
+    await WhyBiomassPage.deleteMany({});
+    await WhyBiomassPage.create({});
+    console.log('🌱 Why Biomass page content seeded');
 
     console.log('✅ Seeding complete!');
     process.exit(0);
