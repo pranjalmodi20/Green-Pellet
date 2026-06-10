@@ -27,10 +27,11 @@ const Navbar = () => {
             <Link className={linkClass('/about')} to="/about">About Us</Link>
             <Link className={linkClass('/why-biomass')} to="/why-biomass">Why Biomass</Link>
             <Link className={linkClass('/products')} to="/products">Our Products</Link>
-            <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" to="/industries">Industries</Link>
-            <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" to="/blogs">Blogs</Link>
-            <Link className="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300" to="/contact">Contact</Link>
+            <Link className={linkClass('/industries')} to="/industries">Industries</Link>
+            <Link className={linkClass('/blogs')} to="/blogs">Blogs</Link>
+            <Link className={linkClass('/contact')} to="/contact">Contact</Link>
           </div>
+
           <div className="flex items-center space-x-4">
             <button className="bg-primary text-on-primary px-8 py-3 rounded-full font-label-caps text-label-caps scale-95 active:opacity-80 transition-transform uppercase">Call Now</button>
             <button 

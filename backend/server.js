@@ -23,11 +23,16 @@ app.use('/api/home',          require('./routes/home'));
 app.use('/api/products',      require('./routes/products'));
 app.use('/api/product-categories', require('./routes/categories'));
 app.use('/api/upload', require('./routes/uploadRoutes'));
+app.use('/api/industries/config', require('./routes/industryConfig'));
 app.use('/api/industries',    require('./routes/industries'));
+app.use('/api/case-studies',  require('./routes/caseStudies'));
 app.use('/api/testimonials',  require('./routes/testimonials'));
 app.use('/api/newsletter',    require('./routes/newsletter'));
 app.use('/api/about',         require('./routes/about'));
 app.use('/api/why-biomass',   require('./routes/whyBiomass'));
+app.use('/api/blogs',         require('./routes/blogRoutes'));
+app.use('/api/contact',       require('./routes/contactRoutes'));
+
 
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date() }));

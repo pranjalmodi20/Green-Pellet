@@ -50,7 +50,10 @@ const Footer = () => {
             <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/about">About Us</Link></li>
             <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/why-biomass">Why Biomass</Link></li>
             <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/industries">Impact</Link></li>
+            <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/blogs">Blogs</Link></li>
+            <li><Link className="font-body-md text-on-primary/70 hover:text-tertiary-fixed-dim transition-all block" to="/contact">Contact</Link></li>
           </ul>
+
         </div>
         <div className="col-span-6 md:col-span-3 lg:col-span-2 space-y-6">
           <h4 className="font-label-caps text-label-caps text-white uppercase opacity-50">Products</h4>

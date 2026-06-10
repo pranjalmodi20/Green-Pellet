@@ -6,6 +6,7 @@ const { validateIndustry } = require('../validators/industryValidator');
 
 // Public read
 router.get('/', industryController.getIndustries);
+router.get('/:slug', industryController.getIndustryBySlug);
 
 // Admin operations
 router.get('/all', authMiddleware, industryController.getAllIndustries);
