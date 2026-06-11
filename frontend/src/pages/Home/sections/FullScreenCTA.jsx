@@ -3,7 +3,7 @@ import React from 'react';
 const FullScreenCTA = ({ config = {} }) => {
   const title = config.ctaTitle || 'Join the Clean Energy Revolution';
   const subtitle = config.ctaSubtitle || "Ready to transition your industry to high-performance biomass fuel? Let's engineer your carbon-neutral path today.";
-  const bgImage = config.ctaBgImage || 'https://lh3.googleusercontent.com/aida/AP1WRLvGSb1VdTpxt1ylPy_XRpihKO4urH-tLZXH6EwvYPVXNyy4v7xB1mEo-Jr8EITzB8YVxLyBRag6U5HsdIztdvBtvjW6SYftpM8W4MCG3ahnFw2SJhC4xf3lZZg7TZ_MORiy5CTvH6GCiSk0M-7JVD-iswoabFaC6yzoGQv5NlPAqhlwMp_fZPph_wWN8jYNbyDq_YZGLW0UOY-BfE_XRYNtUpZXnwvhXsGSPwHAHt3Z1pz9DgKB8TrDbyI';
+  const bgImage = config.ctaBgImage || 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAccvJxJMTAesBpIfTxhI_W3cXgwbK8PlyUOmlHsMNmml40jXYxsh6ZqN2NOyQvssks1Xl2JcI5Zfr6Tf9PlsRrEfEXyGHfOoqm2I0hqbCkA5NsJY4VbCXliuoO3TWxx6EgTjmygzvnaUvTtfI4NnrQ1enCpxeT-iWyhg2wEyboHsHthc9GGUbgfWd6ajxs7ixN7klWQ3vzLcTkrpjThsJK3SDcZH_CQa4PXILZ6r3NTqz1dT3PtVfy8sTIGzGGcu5emlbonzGQAc';
   const primaryCta = config.ctaPrimaryCtaText || 'Partner with Us';
   const secondaryCta = config.ctaSecondaryCtaText || 'Request a Site Visit';
 

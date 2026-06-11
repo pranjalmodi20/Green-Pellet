@@ -16,7 +16,7 @@ const HomeConfigSchema = new mongoose.Schema({
   },
   heroBgImage: {
     type: String,
-    default: 'https://lh3.googleusercontent.com/aida/AP1WRLsHrZQ_ikFwFOhAscpiZ1QAQ7UNIYgO1INVdpCok2efFvh9FUb7iIoTd5jtDfOFX5cP18aQl9tnIGG0Iv-uzJK4KmSQsXVLWFtHoCm3VJ38sR6VkI3ovUw5ljaW4rBkMZncZyhU_iWVJGQ37EtpkTVVXRl7sxIEdTRLnljsh7gZFe3BqsTPyz7xttkWoMTuogAdcq6ebq0JCTsli7AzuV7F7beGA0AqPy8FSZXq6Ycepa82VXQ8JZLYdl8'
+    default: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhBQseeuYJ06Js6Mp6Fz0q32g7d126uEWb0NK9qkwGAoFhZDiocEPpoUO2zHoYKqid2vGNFzifc23fj8JoAtOHCjSPrOvT8mf4ig2ZlL2VsymBimgTfgBAAkKb8t7t23RznzBHNvwrab1YPX1LGBQRqcLYAcrq7biuAD_v0wmtgJtcq4gVWx9yKqt8UG0m0wdI6jpMs6dOTgoqVVtnyWNwAzEDn3lupd7wu0q0C5Ou8fgu1MrcAVtOy6CZ1zyyIFjSzTd8OAwAWQE'
   },
   heroPrimaryCtaText: {
     type: String,
@@ -84,7 +84,7 @@ const HomeConfigSchema = new mongoose.Schema({
   },
   ctaBgImage: {
     type: String,
-    default: 'https://lh3.googleusercontent.com/aida/AP1WRLvGSb1VdTpxt1ylPy_XRpihKO4urH-tLZXH6EwvYPVXNyy4v7xB1mEo-Jr8EITzB8YVxLyBRag6U5HsdIztdvBtvjW6SYftpM8W4MCG3ahnFw2SJhC4xf3lZZg7TZ_MORiy5CTvH6GCiSk0M-7JVD-iswoabFaC6yzoGQv5NlPAqhlwMp_fZPph_wWN8jYNbyDq_YZGLW0UOY-BfE_XRYNtUpZXnwvhXsGSPwHAHt3Z1pz9DgKB8TrDbyI'
+    default: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAccvJxJMTAesBpIfTxhI_W3cXgwbK8PlyUOmlHsMNmml40jXYxsh6ZqN2NOyQvssks1Xl2JcI5Zfr6Tf9PlsRrEfEXyGHfOoqm2I0hqbCkA5NsJY4VbCXliuoO3TWxx6EgTjmygzvnaUvTtfI4NnrQ1enCpxeT-iWyhg2wEyboHsHthc9GGUbgfWd6ajxs7ixN7klWQ3vzLcTkrpjThsJK3SDcZH_CQa4PXILZ6r3NTqz1dT3PtVfy8sTIGzGGcu5emlbonzGQAc'
   },
   ctaPrimaryCtaText: {
     type: String,
