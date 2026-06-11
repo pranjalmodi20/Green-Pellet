@@ -43,7 +43,7 @@ const seed = async () => {
       heroBadge: 'Carbon Neutral Future',
       heroTitle: 'Powering the Planet,\nSustainably.',
       heroSubtitle: "Converting India's agricultural footprint into high-density biomass fuel. Precision engineered energy solutions for global industry leaders.",
-      heroBgImage: '/assets/images/home/hero-background.png',
+      heroBgImage: 'https://lh3.googleusercontent.com/aida/AP1WRLsHrZQ_ikFwFOhAscpiZ1QAQ7UNIYgO1INVdpCok2efFvh9FUb7iIoTd5jtDfOFX5cP18aQl9tnIGG0Iv-uzJK4KmSQsXVLWFtHoCm3VJ38sR6VkI3ovUw5ljaW4rBkMZncZyhU_iWVJGQ37EtpkTVVXRl7sxIEdTRLnljsh7gZFe3BqsTPyz7xttkWoMTuogAdcq6ebq0JCTsli7AzuV7F7beGA0AqPy8FSZXq6Ycepa82VXQ8JZLYdl8',
       heroPrimaryCtaText: 'Explore Solutions',
       heroPrimaryCtaLink: '/products',
       heroSecondaryCtaText: 'Download Roadmap',

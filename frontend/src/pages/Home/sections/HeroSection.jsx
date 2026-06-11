@@ -1,11 +1,14 @@
 import React from 'react';
-import heroBg from '../../../assets/images/home/hero-background.png';
+
+// Exact hero image URL from stitch_green_pellets_next_gen_experience/home_green_pellets_india/code.html (line 149)
+const STITCH_HERO_IMAGE =
+  'https://lh3.googleusercontent.com/aida/AP1WRLsHrZQ_ikFwFOhAscpiZ1QAQ7UNIYgO1INVdpCok2efFvh9FUb7iIoTd5jtDfOFX5cP18aQl9tnIGG0Iv-uzJK4KmSQsXVLWFtHoCm3VJ38sR6VkI3ovUw5ljaW4rBkMZncZyhU_iWVJGQ37EtpkTVVXRl7sxIEdTRLnljsh7gZFe3BqsTPyz7xttkWoMTuogAdcq6ebq0JCTsli7AzuV7F7beGA0AqPy8FSZXq6Ycepa82VXQ8JZLYdl8';
 
 const HeroSection = ({ config = {}, metrics = {} }) => {
   const badge = config.heroBadge || 'Carbon Neutral Future';
   const title = config.heroTitle || 'Powering the Planet,<br/><span class="text-tertiary">Sustainably.</span>';
   const subtitle = config.heroSubtitle || "Converting India's agricultural footprint into high-density biomass fuel. Precision engineered energy solutions for global industry leaders.";
-  const bgImage = config.heroBgImage || heroBg;
+  const bgImage = config.heroBgImage || STITCH_HERO_IMAGE;
   const primaryCta = config.heroPrimaryCtaText || 'Explore Solutions';
   const secondaryCta = config.heroSecondaryCtaText || 'Download Roadmap';
 
