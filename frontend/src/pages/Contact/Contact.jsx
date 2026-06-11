@@ -66,11 +66,9 @@ const DEFAULT_CONTACT_DATA = {
 const Contact = () => {
   const [contactData, setContactData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const loadContactPage = useCallback(async () => {
     setLoading(true);
-    setError(null);
     try {
       const data = await fetchContactPage();
       if (!data || Object.keys(data).length === 0) {
@@ -80,9 +78,6 @@ const Contact = () => {
     } catch (err) {
       console.error('Failed to load contact page:', err);
       setContactData(DEFAULT_CONTACT_DATA);
-      if (import.meta.env.DEV) {
-        setError('Unable to load from CMS. Showing default configuration.');
-      }
     } finally {
       setLoading(false);
     }
@@ -110,11 +105,6 @@ const Contact = () => {
 
   return (
     <div className="w-full">
-      {error && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-tertiary-container text-on-tertiary-fixed px-8 py-4 rounded-2xl shadow-2xl font-body-md max-w-lg text-center border border-tertiary/30">
-          <p className="font-semibold">{error}</p>
-        </div>
-      )}
 
       {/* Hero Section */}
       <ContactHero hero={displayData.hero} />

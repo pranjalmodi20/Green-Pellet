@@ -1,33 +1,43 @@
 import api from './api';
 
+// ── PUBLIC ────────────────────────────────────────────────────────────────────
+
 /**
- * Fetch blogs based on filters.
- * @param {Object} params - Query params (category, search, featured, limit)
+ * Fetch paginated blog list.
+ * Supports: category (slug), search, tag, author, page, pageSize, featured, limit
+ * Returns: { blogs, total, page, pages } OR array (when limit is passed)
  */
 export const fetchBlogs = async (params = {}) => {
   const response = await api.get('/blogs', { params });
   return response.data;
 };
 
-/**
- * Fetch a single blog by slug.
- */
+/** Fetch only featured blogs. limit defaults to 1 on backend. */
+export const fetchFeaturedBlogs = async (limit = 1) => {
+  const response = await api.get('/blogs/featured', { params: { limit } });
+  return response.data;
+};
+
+/** Fetch a single blog by slug. */
 export const fetchBlogBySlug = async (slug) => {
   const response = await api.get(`/blogs/${slug}`);
   return response.data;
 };
 
-/**
- * Fetch all categories.
- */
+/** Fetch related blogs for a given slug. */
+export const fetchRelatedBlogs = async (slug, limit = 3) => {
+  const response = await api.get(`/blogs/${slug}/related`, { params: { limit } });
+  return response.data;
+};
+
+/** Fetch all categories. */
 export const fetchCategories = async () => {
   const response = await api.get('/blogs/categories');
   return response.data;
 };
 
-/**
- * Fetch all blogs for admin console (includes inactive/unpublished).
- */
+// ── ADMIN ─────────────────────────────────────────────────────────────────────
+
 export const fetchAllBlogsAdmin = async (token) => {
   const response = await api.get('/blogs/admin/all', {
     headers: { Authorization: `Bearer ${token}` }
@@ -35,9 +45,6 @@ export const fetchAllBlogsAdmin = async (token) => {
   return response.data;
 };
 
-/**
- * Create a new blog post.
- */
 export const createBlog = async (data, token) => {
   const response = await api.post('/blogs', data, {
     headers: { Authorization: `Bearer ${token}` }
@@ -45,9 +52,6 @@ export const createBlog = async (data, token) => {
   return response.data;
 };
 
-/**
- * Update an existing blog post.
- */
 export const updateBlog = async (id, data, token) => {
   const response = await api.put(`/blogs/${id}`, data, {
     headers: { Authorization: `Bearer ${token}` }
@@ -55,9 +59,6 @@ export const updateBlog = async (id, data, token) => {
   return response.data;
 };
 
-/**
- * Delete a blog post.
- */
 export const deleteBlog = async (id, token) => {
   const response = await api.delete(`/blogs/${id}`, {
     headers: { Authorization: `Bearer ${token}` }
@@ -65,9 +66,6 @@ export const deleteBlog = async (id, token) => {
   return response.data;
 };
 
-/**
- * Create a blog category.
- */
 export const createCategory = async (data, token) => {
   const response = await api.post('/blogs/categories', data, {
     headers: { Authorization: `Bearer ${token}` }
@@ -75,9 +73,6 @@ export const createCategory = async (data, token) => {
   return response.data;
 };
 
-/**
- * Update a blog category.
- */
 export const updateCategory = async (id, data, token) => {
   const response = await api.put(`/blogs/categories/${id}`, data, {
     headers: { Authorization: `Bearer ${token}` }
@@ -85,9 +80,6 @@ export const updateCategory = async (id, data, token) => {
   return response.data;
 };
 
-/**
- * Delete a blog category.
- */
 export const deleteCategory = async (id, token) => {
   const response = await api.delete(`/blogs/categories/${id}`, {
     headers: { Authorization: `Bearer ${token}` }
@@ -95,9 +87,6 @@ export const deleteCategory = async (id, token) => {
   return response.data;
 };
 
-/**
- * Upload a media asset (images, pdfs).
- */
 export const uploadFile = async (file, token) => {
   const formData = new FormData();
   formData.append('file', file);

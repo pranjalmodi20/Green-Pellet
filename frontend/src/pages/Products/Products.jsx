@@ -185,11 +185,9 @@ const Products = () => {
   const [config, setConfig] = useState(null);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const loadPageData = useCallback(async () => {
     setLoading(true);
-    setError(null);
     try {
       const [configData, productsData] = await Promise.all([
         fetchProductsConfig(),
@@ -201,9 +199,6 @@ const Products = () => {
       console.error('Failed to load Our Products data:', err);
       setConfig(DEFAULT_PRODUCTS_CONFIG);
       setProducts(DEFAULT_PRODUCTS);
-      if (import.meta.env.DEV) {
-        setError('Unable to connect to the server. Showing default content.');
-      }
     } finally {
       setLoading(false);
     }
@@ -232,13 +227,6 @@ const Products = () => {
 
   return (
     <div className="w-full mt-24">
-      {/* Error notification banner */}
-      {error && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded-2xl shadow-2xl font-body-md max-w-lg text-center border border-tertiary/30">
-          <p className="font-semibold">{error}</p>
-        </div>
-      )}
-
       <ProductsHero config={displayConfig} />
       <ProductGrid products={displayProducts} />
       <ProductComparison products={displayProducts} />

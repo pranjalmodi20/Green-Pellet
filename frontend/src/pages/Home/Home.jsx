@@ -17,7 +17,6 @@ const Home = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   // ── Format raw metric numbers into display strings ────────────────────
   const formatMetrics = useCallback((data) => {
@@ -39,7 +38,6 @@ const Home = () => {
   useEffect(() => {
     const fetchAllData = async () => {
       setLoading(true);
-      setError(null);
 
       const [configRes, metricsRes, productsRes, industriesRes, testimonialsRes] = await Promise.allSettled([
         getHomeConfig(),
@@ -77,13 +75,6 @@ const Home = () => {
         setTestimonials(testimonialsRes.value);
       } else {
         console.error('Failed to load testimonials:', testimonialsRes.reason);
-      }
-
-      const allFailed = [configRes, metricsRes, productsRes, industriesRes, testimonialsRes]
-        .every((r) => r.status === 'rejected');
-
-      if (allFailed && import.meta.env.DEV) {
-        setError('Unable to connect to the server. Showing default content.');
       }
 
       setLoading(false);
@@ -140,12 +131,6 @@ const Home = () => {
 
   return (
     <div className="w-full">
-      {/* Error notification banner */}
-      {error && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded-2xl shadow-2xl font-body-md max-w-lg text-center border border-tertiary/30">
-          <p className="font-semibold">{error}</p>
-        </div>
-      )}
 
       {/* 1. Hero Landing Block */}
       <HeroSection config={homeConfig || {}} metrics={metrics} />

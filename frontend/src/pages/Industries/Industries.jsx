@@ -52,11 +52,9 @@ const Industries = () => {
   const [config, setConfig] = useState(null);
   const [industries, setIndustries] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const loadPageData = useCallback(async () => {
     setLoading(true);
-    setError(null);
     try {
       const [configData, industriesData] = await Promise.all([
         fetchIndustriesConfig(),
@@ -69,9 +67,6 @@ const Industries = () => {
     } catch (err) {
       console.error('Failed to load Industries page data:', err);
       setConfig(DEFAULT_INDUSTRIES_CONFIG);
-      if (import.meta.env.DEV) {
-        setError('Unable to connect to the server. Showing default content.');
-      }
     } finally {
       setLoading(false);
     }
@@ -99,12 +94,6 @@ const Industries = () => {
 
   return (
     <div className="w-full">
-      {/* Error notification banner */}
-      {error && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded-2xl shadow-2xl font-body-md max-w-lg text-center border border-tertiary/30 animate-pulse">
-          <p className="font-semibold">{error}</p>
-        </div>
-      )}
 
       {/* Hero Header */}
       <IndustriesHero config={displayConfig} />

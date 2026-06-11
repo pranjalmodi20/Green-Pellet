@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import heroBg from '../../../assets/images/home/hero-background.png';
 
 // Exact hero image URL from stitch_green_pellets_next_gen_experience/home_green_pellets_india/code.html (line 149)
 const STITCH_HERO_IMAGE =
@@ -15,6 +16,26 @@ const HeroSection = ({ config = {}, metrics = {} }) => {
   const tonsProcessed = metrics.tonsProcessed || '1.2M+';
   const co2Offset = metrics.co2Offset || '450K';
 
+  // Fallback state for the background image URL
+  const [bgUrl, setBgUrl] = useState(heroBg);
+
+  useEffect(() => {
+    if (bgImage) {
+      // Test if the image is loadable (not returning 403 or offline)
+      const img = new Image();
+      img.src = bgImage;
+      img.onload = () => {
+        setBgUrl(bgImage);
+      };
+      img.onerror = () => {
+        console.warn(`Hero image failed to load: ${bgImage}. Falling back to local hero-background.`);
+        setBgUrl(heroBg);
+      };
+    } else {
+      setBgUrl(heroBg);
+    }
+  }, [bgImage]);
+
   // Format title: if it already contains HTML tags, use as-is.
   // Otherwise, convert \n to <br/> and wrap "Sustainably." in tertiary color span.
   const formattedTitle = title.includes('<')
@@ -28,7 +49,7 @@ const HeroSection = ({ config = {}, metrics = {} }) => {
       <div className="absolute inset-0 z-0">
         <div 
           className="w-full h-full bg-cover bg-center" 
-          style={{ backgroundImage: `url('${bgImage}')` }}
+          style={{ backgroundImage: `url('${bgUrl}')` }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
       </div>

@@ -124,11 +124,9 @@ const DEFAULT_ABOUT_DATA = {
 const About = () => {
   const [aboutData, setAboutData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const loadAbout = useCallback(async () => {
     setLoading(true);
-    setError(null);
     try {
       const data = await fetchAboutPage();
       if (!data || Object.keys(data).length === 0) {
@@ -138,9 +136,6 @@ const About = () => {
     } catch (err) {
       console.error('Failed to load about page:', err);
       setAboutData(DEFAULT_ABOUT_DATA);
-      if (import.meta.env.DEV) {
-        setError('Unable to connect to the server. Showing default content.');
-      }
     } finally {
       setLoading(false);
     }
@@ -168,13 +163,6 @@ const About = () => {
 
   return (
     <div className="w-full mt-24">
-      {/* Error notification banner */}
-      {error && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded-2xl shadow-2xl font-body-md max-w-lg text-center border border-tertiary/30">
-          <p className="font-semibold">{error}</p>
-        </div>
-      )}
-
       <AboutHero hero={displayData.hero} companyStory={displayData.companyStory} />
       <MissionVisionSection
         purpose={displayData.purpose}

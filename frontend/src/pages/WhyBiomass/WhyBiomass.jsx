@@ -104,11 +104,9 @@ const DEFAULT_WHY_BIOMASS_DATA = {
 const WhyBiomass = () => {
   const [pageData, setPageData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const loadWhyBiomass = useCallback(async () => {
     setLoading(true);
-    setError(null);
     try {
       const data = await fetchWhyBiomassPage();
       if (!data || Object.keys(data).length === 0) {
@@ -118,9 +116,6 @@ const WhyBiomass = () => {
     } catch (err) {
       console.error('Failed to load Why Biomass page:', err);
       setPageData(DEFAULT_WHY_BIOMASS_DATA);
-      if (import.meta.env.DEV) {
-        setError('Unable to connect to the server. Showing default content.');
-      }
     } finally {
       setLoading(false);
     }
@@ -148,13 +143,6 @@ const WhyBiomass = () => {
 
   return (
     <div className="w-full mt-24">
-      {/* Error notification banner */}
-      {error && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-tertiary-container text-on-tertiary-container px-8 py-4 rounded-2xl shadow-2xl font-body-md max-w-lg text-center border border-tertiary/30">
-          <p className="font-semibold">{error}</p>
-        </div>
-      )}
-
       <WhyBiomassHero hero={displayData.hero} />
       <BiomassDefinition definition={displayData.definition} />
       <ComparisonSection

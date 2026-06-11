@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const BlogCategories = ({ categories = [], selectedCategory = '', onSelectCategory }) => {
   return (
@@ -9,7 +8,7 @@ const BlogCategories = ({ categories = [], selectedCategory = '', onSelectCatego
           onClick={() => onSelectCategory('')}
           className={`font-label-caps text-label-caps pb-6 -mb-[26px] whitespace-nowrap cursor-pointer transition-all border-b-2 ${
             selectedCategory === ''
-              ? 'text-primary border-primary font-bold'
+              ? 'text-primary border-primary'
               : 'text-on-surface-variant border-transparent hover:text-primary'
           }`}
         >
@@ -21,7 +20,7 @@ const BlogCategories = ({ categories = [], selectedCategory = '', onSelectCatego
             onClick={() => onSelectCategory(cat.slug)}
             className={`font-label-caps text-label-caps pb-6 -mb-[26px] whitespace-nowrap cursor-pointer transition-all border-b-2 uppercase ${
               selectedCategory === cat.slug
-                ? 'text-primary border-primary font-bold'
+                ? 'text-primary border-primary'
                 : 'text-on-surface-variant border-transparent hover:text-primary'
             }`}
           >

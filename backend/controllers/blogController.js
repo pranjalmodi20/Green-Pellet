@@ -1,7 +1,18 @@
 const BlogPost = require('../models/BlogPost');
 const BlogCategory = require('../models/BlogCategory');
 
-// ── CATEGORIES ──
+// ── HELPERS ──────────────────────────────────────────────────────────────────
+
+const buildPublicFilter = () => ({
+  status: 'active',
+  published: true,
+  $or: [
+    { scheduledAt: null },
+    { scheduledAt: { $lte: new Date() } }
+  ]
+});
+
+// ── CATEGORIES ───────────────────────────────────────────────────────────────
 
 exports.getCategories = async (req, res) => {
   try {
@@ -24,7 +35,9 @@ exports.createCategory = async (req, res) => {
 
 exports.updateCategory = async (req, res) => {
   try {
-    const category = await BlogCategory.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+    const category = await BlogCategory.findByIdAndUpdate(
+      req.params.id, req.body, { new: true, runValidators: true }
+    );
     if (!category) return res.status(404).json({ message: 'Category not found' });
     res.json(category);
   } catch (error) {
@@ -42,52 +55,103 @@ exports.deleteCategory = async (req, res) => {
   }
 };
 
-// ── BLOG POSTS ──
+// ── PUBLIC BLOG ROUTES ────────────────────────────────────────────────────────
 
 exports.getBlogs = async (req, res) => {
   try {
-    const { category, search, featured, limit } = req.query;
-    const filter = { status: 'active', published: true };
+    const { category, search, featured, tag, author, limit, page = 1, pageSize = 9 } = req.query;
+    const filter = buildPublicFilter();
 
-    if (featured === 'true') {
-      filter.featured = true;
-    }
+    if (featured === 'true') filter.featured = true;
 
     if (category) {
-      // Find category by slug first
       const cat = await BlogCategory.findOne({ slug: category });
       if (cat) {
         filter.category = cat._id;
       } else {
-        // If category slug doesn't exist, return empty array
-        return res.json([]);
+        return res.json({ blogs: [], total: 0, page: 1, pages: 0 });
       }
+    }
+
+    if (tag) {
+      filter.tags = { $in: [tag] };
+    }
+
+    if (author) {
+      filter['author.name'] = { $regex: author, $options: 'i' };
     }
 
     if (search) {
       filter.$or = [
         { title: { $regex: search, $options: 'i' } },
         { excerpt: { $regex: search, $options: 'i' } },
-        { content: { $regex: search, $options: 'i' } }
+        { tags: { $in: [new RegExp(search, 'i')] } }
       ];
     }
 
-    let query = BlogPost.find(filter)
-      .populate('category')
-      .sort({ featured: -1, displayOrder: 1, publishedAt: -1 });
-
+    // If explicit limit is requested (e.g. related posts), skip pagination
     if (limit) {
-      query = query.limit(parseInt(limit, 10));
+      const blogs = await BlogPost.find(filter)
+        .populate('category')
+        .sort({ featured: -1, displayOrder: 1, publishedAt: -1 })
+        .limit(parseInt(limit, 10));
+      return res.json(blogs);
     }
 
-    const blogs = await query;
+    const parsedPage = Math.max(1, parseInt(page, 10));
+    const parsedPageSize = Math.min(50, Math.max(1, parseInt(pageSize, 10)));
+    const total = await BlogPost.countDocuments(filter);
+    const pages = Math.ceil(total / parsedPageSize);
+
+    const blogs = await BlogPost.find(filter)
+      .populate('category')
+      .sort({ featured: -1, displayOrder: 1, publishedAt: -1 })
+      .skip((parsedPage - 1) * parsedPageSize)
+      .limit(parsedPageSize);
+
+    res.json({ blogs, total, page: parsedPage, pages });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.getFeaturedBlogs = async (req, res) => {
+  try {
+    const filter = { ...buildPublicFilter(), featured: true };
+    const limit = parseInt(req.query.limit, 10) || 1;
+    const blogs = await BlogPost.find(filter)
+      .populate('category')
+      .sort({ displayOrder: 1, publishedAt: -1 })
+      .limit(limit);
     res.json(blogs);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-// Admin route to fetch all posts regardless of status/publish
+exports.getRelatedBlogs = async (req, res) => {
+  try {
+    const blog = await BlogPost.findOne({ slug: req.params.slug });
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
+
+    const limit = parseInt(req.query.limit, 10) || 3;
+    const filter = {
+      ...buildPublicFilter(),
+      _id: { $ne: blog._id },
+      category: blog.category
+    };
+
+    const related = await BlogPost.find(filter)
+      .populate('category')
+      .sort({ publishedAt: -1 })
+      .limit(limit);
+
+    res.json(related);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 exports.getAllBlogsAdmin = async (req, res) => {
   try {
     const blogs = await BlogPost.find()
@@ -101,8 +165,12 @@ exports.getAllBlogsAdmin = async (req, res) => {
 
 exports.getBlogBySlug = async (req, res) => {
   try {
-    const blog = await BlogPost.findOne({ slug: req.params.slug, status: 'active', published: true })
-      .populate('category');
+    const filter = { slug: req.params.slug, ...buildPublicFilter() };
+    const blog = await BlogPost.findOneAndUpdate(
+      filter,
+      { $inc: { views: 1 } },
+      { new: true }
+    ).populate('category');
     if (!blog) return res.status(404).json({ message: 'Blog post not found' });
     res.json(blog);
   } catch (error) {
@@ -123,8 +191,9 @@ exports.createBlog = async (req, res) => {
 
 exports.updateBlog = async (req, res) => {
   try {
-    const blog = await BlogPost.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true })
-      .populate('category');
+    const blog = await BlogPost.findByIdAndUpdate(
+      req.params.id, req.body, { new: true, runValidators: true }
+    ).populate('category');
     if (!blog) return res.status(404).json({ message: 'Blog post not found' });
     res.json(blog);
   } catch (error) {
