@@ -5,7 +5,7 @@ const ProductsHeroConfigSchema = new mongoose.Schema({
     badge: { type: String, default: 'PREMIUM ENERGY SOLUTIONS' },
     title: { type: String, default: 'Engineered for High-Performance' },
     subtitle: { type: String, default: 'Our diverse portfolio of biomass fuel pellets represents the pinnacle of sustainable energy technology, delivering unrivaled calorific efficiency and industrial precision.' },
-    bgImage: { type: String, default: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcY6XVUpIxZzA_jA6faDg5alJ5k70h613FRy7KuVQYRpGM0eKgrZZpfQ9ynUekWqdXi4RCZyI1FgXIeQ2COlx1i0hXCqhnYNLthkCq1VYCqq3bBhn1ZCYQhAAVFDOIWyUHr7joMxoP_dbLZalUOneSJ1M3HvN2na448u0HZ4OE9Q391ExayjUyZ0WvchSMLAtjqWtiJRn-u2irABZbJL2zOZ4KeDTRnymIwsgHAnscrPMAI1JbPW5bhKx_YDo1NmXM2dNGKzBaEJs' },
+    bgImage: { type: String, default: 'https://lh3.googleusercontent.com/aida/AP1WRLudrAfW8c3o8y_of9ckFB-8-feUvfZxDmw3AdOnspBFsoyE2MctWdV54ENawwi_vjbEQ76KkPbYVxJV26YnoNT-76d-iuYTr5vstsoYYagsoZuJd7DBlXNNWWozddO2l0jW4dBfRlvGzpzu17sAFFZRXVVTvKAE6v4lh48NPrt2932TC4bYogqmzrXjutxfNEG_pOgPp_hn0s2-Sbp_fqlZ6d-4-8a7FTEvmmSniRK7KqPX4QaUCAuRJNo' },
     button1Text: { type: String, default: 'Request Catalog' },
     button1Link: { type: String, default: '#' },
     button2Text: { type: String, default: 'Technical Support' },

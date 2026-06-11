@@ -11,7 +11,7 @@ const IndustriesPageConfigSchema = new mongoose.Schema({
     badge: { type: String, default: 'GLOBAL INDUSTRIAL IMPACT' },
     title: { type: String, default: "Powering the World's Leading Industries." },
     subtitle: { type: String, default: "From pharmaceutical precision to the scale of global FMCG manufacturing, we provide high-performance biomass solutions that define the next generation of industrial energy." },
-    bgImage: { type: String, default: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBFO4mq4TAsLR9GoP_VBUSEEUHGJErzfTwoW5YRzn41twFHuKdJJMN9flwK4v_lSh6hn4t8Ar0OqpuF9C0GQLjoncW_UVUd1KNaJfCz3fqCi810UYw9osnI_jeUHxQ2rmHqEMPM809EPAYtwz19WHk4J_98mv_bezIrfiaF4rzW3S1kHOClBegiAJeXZyqami5nY5jf2zLlCK2cTbqF4Lta7wZoDAFNqIC-Xld2SQTbVJFCYHOldWH0fHCw351zaumwDwmkq0YwHMA' }
+    bgImage: { type: String, default: 'https://lh3.googleusercontent.com/aida/AP1WRLs0q4V70rWgCI9GGFsvBkkl0iih-wr77iiRbE_OpDPaHgaxR-UUAIUBKwEE_vZDM7cw1yNIWK5u8E7nvVO3zHoX1zoe-9qQFwQ3Mva-aL3eXaIzsPur_xNgY3kIhZSjoOdA7Y_9Cw5mte99lA8UyQX6etLMpR7wxpKJQzQsnsEPeiSNBq8hcvuRxPR4JrNHf9TdEfM4Oj41FhTcLiF3UdU3eWPpbYAG-w5CV0EAql87A3Qab75JaZzzbI8' }
   },
   detailedSectors: {
     title: { type: String, default: 'Tailored for your scale.' },

@@ -30,10 +30,10 @@ const seed = async () => {
     // 1. Seed Admin User
     await Admin.deleteMany({});
     const passwordHash = await bcrypt.hash('Admin@123', 10);
-    await Admin.create({ 
-      email: 'admin@greenpellets.in', 
-      password: passwordHash, 
-      name: 'Green Pellets Admin' 
+    await Admin.create({
+      email: 'admin@greenpellets.in',
+      password: passwordHash,
+      name: 'Green Pellets Admin'
     });
     console.log('🌱 Admin account seeded: admin@greenpellets.in / Admin@123');
 
@@ -43,7 +43,7 @@ const seed = async () => {
       heroBadge: 'Carbon Neutral Future',
       heroTitle: 'Powering the Planet,\nSustainably.',
       heroSubtitle: "Converting India's agricultural footprint into high-density biomass fuel. Precision engineered energy solutions for global industry leaders.",
-      heroBgImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhBQseeuYJ06Js6Mp6Fz0q32g7d126uEWb0NK9qkwGAoFhZDiocEPpoUO2zHoYKqid2vGNFzifc23fj8JoAtOHCjSPrOvT8mf4ig2ZlL2VsymBimgTfgBAAkKb8t7t23RznzBHNvwrab1YPX1LGBQRqcLYAcrq7biuAD_v0wmtgJtcq4gVWx9yKqt8UG0m0wdI6jpMs6dOTgoqVVtnyWNwAzEDn3lupd7wu0q0C5Ou8fgu1MrcAVtOy6CZ1zyyIFjSzTd8OAwAWQE',
+      heroBgImage: '/assets/images/home/hero-background.png',
       heroPrimaryCtaText: 'Explore Solutions',
       heroPrimaryCtaLink: '/products',
       heroSecondaryCtaText: 'Download Roadmap',
@@ -61,7 +61,7 @@ const seed = async () => {
 
       ctaTitle: 'Join the Clean Energy Revolution',
       ctaSubtitle: "Ready to transition your industry to high-performance biomass fuel? Let's engineer your carbon-neutral path today.",
-      ctaBgImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCAccvJxJMTAesBpIfTxhI_W3cXgwbK8PlyUOmlHsMNmml40jXYxsh6ZqN2NOyQvssks1Xl2JcI5Zfr6Tf9PlsRrEfEXyGHfOoqm2I0hqbCkA5NsJY4VbCXliuoO3TWxx6EgTjmygzvnaUvTtfI4NnrQ1enCpxeT-iWyhg2wEyboHsHthc9GGUbgfWd6ajxs7ixN7klWQ3vzLcTkrpjThsJK3SDcZH_CQa4PXILZ6r3NTqz1dT3PtVfy8sTIGzGGcu5emlbonzGQAc',
+      ctaBgImage: 'https://lh3.googleusercontent.com/aida/AP1WRLvGSb1VdTpxt1ylPy_XRpihKO4urH-tLZXH6EwvYPVXNyy4v7xB1mEo-Jr8EITzB8YVxLyBRag6U5HsdIztdvBtvjW6SYftpM8W4MCG3ahnFw2SJhC4xf3lZZg7TZ_MORiy5CTvH6GCiSk0M-7JVD-iswoabFaC6yzoGQv5NlPAqhlwMp_fZPph_wWN8jYNbyDq_YZGLW0UOY-BfE_XRYNtUpZXnwvhXsGSPwHAHt3Z1pz9DgKB8TrDbyI',
       ctaPrimaryCtaText: 'Partner with Us',
       ctaPrimaryCtaLink: '/contact',
       ctaSecondaryCtaText: 'Request a Site Visit',
@@ -100,7 +100,7 @@ const seed = async () => {
         category: woodRes._id,
         shortDescription: 'Low ash content minimizes boiler maintenance while high density ensures logistical efficiency and stable combustion.',
         fullDescription: 'Our flagship pellet range engineered from a refined mix of sawdust and groundnut shell residues. Provides a reliable, consistent burn rate matching the performance of conventional fuels.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcY6XVUpIxZzA_jA6faDg5alJ5k70h613FRy7KuVQYRpGM0eKgrZZpfQ9ynUekWqdXi4RCZyI1FgXIeQ2COlx1i0hXCqhnYNLthkCq1VYCqq3bBhn1ZCYQhAAVFDOIWyUHr7joMxoP_dbLZalUOneSJ1M3HvN2na448u0HZ4OE9Q391ExayjUyZ0WvchSMLAtjqWtiJRn-u2irABZbJL2zOZ4KeDTRnymIwsgHAnscrPMAI1JbPW5bhKx_YDo1NmXM2dNGKzBaEJs',
+        image: 'https://lh3.googleusercontent.com/aida/AP1WRLudrAfW8c3o8y_of9ckFB-8-feUvfZxDmw3AdOnspBFsoyE2MctWdV54ENawwi_vjbEQ76KkPbYVxJV26YnoNT-76d-iuYTr5vstsoYYagsoZuJd7DBlXNNWWozddO2l0jW4dBfRlvGzpzu17sAFFZRXVVTvKAE6v4lh48NPrt2932TC4bYogqmzrXjutxfNEG_pOgPp_hn0s2-Sbp_fqlZ6d-4-8a7FTEvmmSniRK7KqPX4QaUCAuRJNo',
         specifications: [
           { parameter: 'Calorific Value', value: '4200 - 4500', unit: 'Kcal/kg' },
           { parameter: 'Moisture Content', value: '< 8.0', unit: '%' }
@@ -271,7 +271,7 @@ const seed = async () => {
     await IndustryCategory.deleteMany({});
     const catFandB = await IndustryCategory.create({ name: 'FOOD & BEVERAGE', slug: 'food-beverage' });
     const catSteam = await IndustryCategory.create({ name: 'PRECISION STEAM GENERATION', slug: 'precision-steam-generation' });
-    
+
     await CaseStudy.deleteMany({});
     const caseFood = await CaseStudy.create({
       title: 'Food Processing Thermal Efficiency Case Study',
@@ -288,7 +288,7 @@ const seed = async () => {
     });
 
     await Industry.deleteMany({});
-    
+
     // Create new industries page items
     const indFood = await Industry.create({
       title: 'Food Processing & Namkeen',

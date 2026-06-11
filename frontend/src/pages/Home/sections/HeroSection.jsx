@@ -1,10 +1,11 @@
 import React from 'react';
+import heroBg from '../../../assets/images/home/hero-background.png';
 
 const HeroSection = ({ config = {}, metrics = {} }) => {
   const badge = config.heroBadge || 'Carbon Neutral Future';
   const title = config.heroTitle || 'Powering the Planet,<br/><span class="text-tertiary">Sustainably.</span>';
   const subtitle = config.heroSubtitle || "Converting India's agricultural footprint into high-density biomass fuel. Precision engineered energy solutions for global industry leaders.";
-  const bgImage = config.heroBgImage || 'https://lh3.googleusercontent.com/aida-public/AB6AXuBhBQseeuYJ06Js6Mp6Fz0q32g7d126uEWb0NK9qkwGAoFhZDiocEPpoUO2zHoYKqid2vGNFzifc23fj8JoAtOHCjSPrOvT8mf4ig2ZlL2VsymBimgTfgBAAkKb8t7t23RznzBHNvwrab1YPX1LGBQRqcLYAcrq7biuAD_v0wmtgJtcq4gVWx9yKqt8UG0m0wdI6jpMs6dOTgoqVVtnyWNwAzEDn3lupd7wu0q0C5Ou8fgu1MrcAVtOy6CZ1zyyIFjSzTd8OAwAWQE';
+  const bgImage = config.heroBgImage || heroBg;
   const primaryCta = config.heroPrimaryCtaText || 'Explore Solutions';
   const secondaryCta = config.heroSecondaryCtaText || 'Download Roadmap';
 
