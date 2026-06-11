@@ -12,9 +12,16 @@ const useBlogCategories = () => {
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
+    console.log('[useBlogCategories] Fetching categories');
     fetchCategories()
-      .then((data) => { if (!cancelled) setCategories(Array.isArray(data) ? data : []); })
-      .catch(() => { if (!cancelled) setError('Failed to load categories.'); })
+      .then((data) => {
+        console.log('[useBlogCategories] Successfully fetched categories:', data);
+        if (!cancelled) setCategories(Array.isArray(data) ? data : []);
+      })
+      .catch((err) => {
+        console.error('[useBlogCategories] Error fetching categories:', err);
+        if (!cancelled) setError('Failed to load categories.');
+      })
       .finally(() => { if (!cancelled) setLoading(false); });
     return () => { cancelled = true; };
   }, []);

@@ -8,7 +8,13 @@ const app = express();
 
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000'],
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (/^http:\/\/localhost:\d+$/.test(origin) || origin.endsWith('.vercel.app') || origin === 'https://green-pellet.vercel.app') {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true
 }));
 app.use(express.json());

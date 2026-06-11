@@ -34,7 +34,7 @@ const Blogs = () => {
 
   const { categories } = useBlogCategories();
 
-  const { blogs, total, pages, page, loading, nextPage, prevPage } = useBlogs({
+  const { blogs, total, pages, page, loading, error, nextPage, prevPage } = useBlogs({
     category: selectedCategory,
     search: debouncedQuery,
     pageSize: 9
@@ -123,7 +123,7 @@ const Blogs = () => {
         <div className="max-w-container-max-width mx-auto px-grid-margin-desktop py-24 text-center">
           <span className="material-symbols-outlined text-5xl text-on-surface-variant/30 block mb-4">article</span>
           <p className="font-body-lg text-on-surface-variant">
-            {isFiltered ? 'No articles found matching your filters.' : 'No articles published yet.'}
+            {error ? `Error: ${error}` : (isFiltered ? 'No articles found matching your filters.' : 'No articles published yet.')}
           </p>
           {isFiltered && (
             <button

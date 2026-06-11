@@ -18,9 +18,11 @@ const useBlog = (slug) => {
     setError(null);
     setBlog(null);
 
+    console.log(`[useBlog] Fetching blog post with slug:`, slug);
     fetchBlogBySlug(slug)
       .then((data) => {
         if (cancelled) return;
+        console.log(`[useBlog] Successfully fetched blog post:`, data);
         setBlog(data);
 
         // SEO: update document title and meta description
@@ -55,6 +57,7 @@ const useBlog = (slug) => {
         });
       })
       .catch((err) => {
+        console.error(`[useBlog] Error fetching blog post with slug ${slug}:`, err);
         if (!cancelled) setError('Article not found.');
       })
       .finally(() => {

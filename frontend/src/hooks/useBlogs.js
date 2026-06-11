@@ -34,8 +34,11 @@ const useBlogs = ({ category = '', search = '', tag = '', pageSize = 9 } = {}) =
       if (search) params.search = search;
       if (tag) params.tag = tag;
 
+      console.log(`[useBlogs] Fetching blogs with params:`, params);
       const data = await fetchBlogs(params);
       if (controller.signal.aborted) return;
+
+      console.log(`[useBlogs] Successfully fetched blogs data:`, data);
 
       // Backend returns { blogs, total, page, pages } for paginated requests
       if (data && data.blogs) {
@@ -51,6 +54,7 @@ const useBlogs = ({ category = '', search = '', tag = '', pageSize = 9 } = {}) =
       }
     } catch (err) {
       if (!controller.signal.aborted) {
+        console.error(`[useBlogs] Error fetching blogs:`, err);
         setError('Failed to load articles.');
       }
     } finally {
