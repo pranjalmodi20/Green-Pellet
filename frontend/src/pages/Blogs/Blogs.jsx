@@ -8,6 +8,7 @@ import NewsletterSection from '../../components/blogs/NewsletterSection';
 import useBlogs from '../../hooks/useBlogs';
 import useBlogCategories from '../../hooks/useBlogCategories';
 import useBlogSearch from '../../hooks/useBlogSearch';
+import '../Blog/Blog.css';
 
 // ── Skeleton loaders ──────────────────────────────────────────────────────────
 

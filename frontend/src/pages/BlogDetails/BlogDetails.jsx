@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import useBlog from '../../hooks/useBlog';
 import useRelatedBlogs from '../../hooks/useRelatedBlogs';
 import BlogCard from '../../components/blogs/BlogCard';
+import '../Blog/Blog.css';
 
 const formatDate = (dateStr) => {
   if (!dateStr) return '';

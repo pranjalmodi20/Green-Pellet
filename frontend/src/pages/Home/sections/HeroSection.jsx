@@ -1,40 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import heroBg from '../../../assets/images/home/hero-background.png';
-
-// Exact hero image URL from stitch_green_pellets_next_gen_experience/home_green_pellets_india/code.html (line 149)
-const STITCH_HERO_IMAGE =
-  'https://lh3.googleusercontent.com/aida/AP1WRLsHrZQ_ikFwFOhAscpiZ1QAQ7UNIYgO1INVdpCok2efFvh9FUb7iIoTd5jtDfOFX5cP18aQl9tnIGG0Iv-uzJK4KmSQsXVLWFtHoCm3VJ38sR6VkI3ovUw5ljaW4rBkMZncZyhU_iWVJGQ37EtpkTVVXRl7sxIEdTRLnljsh7gZFe3BqsTPyz7xttkWoMTuogAdcq6ebq0JCTsli7AzuV7F7beGA0AqPy8FSZXq6Ycepa82VXQ8JZLYdl8';
+import React from 'react';
 
 const HeroSection = ({ config = {}, metrics = {} }) => {
   const badge = config.heroBadge || 'Carbon Neutral Future';
   const title = config.heroTitle || 'Powering the Planet,<br/><span class="text-tertiary">Sustainably.</span>';
   const subtitle = config.heroSubtitle || "Converting India's agricultural footprint into high-density biomass fuel. Precision engineered energy solutions for global industry leaders.";
-  const bgImage = config.heroBgImage || STITCH_HERO_IMAGE;
+  const bgUrl = config.heroBgImage || '/images/hero-background.png';
   const primaryCta = config.heroPrimaryCtaText || 'Explore Solutions';
   const secondaryCta = config.heroSecondaryCtaText || 'Download Roadmap';
 
   const tonsProcessed = metrics.tonsProcessed || '1.2M+';
   const co2Offset = metrics.co2Offset || '450K';
-
-  // Fallback state for the background image URL
-  const [bgUrl, setBgUrl] = useState(heroBg);
-
-  useEffect(() => {
-    if (bgImage) {
-      // Test if the image is loadable (not returning 403 or offline)
-      const img = new Image();
-      img.src = bgImage;
-      img.onload = () => {
-        setBgUrl(bgImage);
-      };
-      img.onerror = () => {
-        console.warn(`Hero image failed to load: ${bgImage}. Falling back to local hero-background.`);
-        setBgUrl(heroBg);
-      };
-    } else {
-      setBgUrl(heroBg);
-    }
-  }, [bgImage]);
 
   // Format title: if it already contains HTML tags, use as-is.
   // Otherwise, convert \n to <br/> and wrap "Sustainably." in tertiary color span.
@@ -47,11 +22,13 @@ const HeroSection = ({ config = {}, metrics = {} }) => {
   return (
     <header className="relative min-h-screen flex items-center pt-32 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-full bg-cover bg-center" 
-          style={{ backgroundImage: `url('${bgUrl}')` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+        <img 
+          src={bgUrl}
+          alt="Biomass energy conversion"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-surface/80 via-surface/30 to-transparent"></div>
       </div>
       <div className="relative z-10 max-w-container-max-width mx-auto px-grid-margin-desktop grid grid-cols-12 gap-grid-gutter w-full">
         <div className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-8">

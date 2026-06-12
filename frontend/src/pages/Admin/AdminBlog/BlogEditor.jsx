@@ -12,6 +12,8 @@ import {
   uploadFile
 } from '../../../services/blogService';
 import { adminLogin } from '../../../services/aboutService';
+import RichTextEditor from '../../../components/admin/RichTextEditor';
+import '../../Blog/Blog.css';
 
 const TOKEN_KEY = 'adminToken';
 
@@ -287,8 +289,12 @@ const BlogEditor = () => {
               <textarea rows={2} required className={ic} value={editingBlog.excerpt} onChange={e => patchBlog('excerpt', e.target.value)} />
             </Field>
 
-            <Field label="Content * (HTML supported)">
-              <textarea rows={10} required className={`${ic} font-mono text-sm`} value={editingBlog.content} onChange={e => patchBlog('content', e.target.value)} />
+            <Field label="Content *">
+              <RichTextEditor
+                content={editingBlog.content}
+                onChange={html => patchBlog('content', html)}
+                token={token}
+              />
             </Field>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
