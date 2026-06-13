@@ -10,7 +10,7 @@ const DEFAULT_INDUSTRIES_CONFIG = {
     badge: 'GLOBAL INDUSTRIAL IMPACT',
     title: "Powering the World's Leading Industries.",
     subtitle: "From pharmaceutical precision to the scale of global FMCG manufacturing, we provide high-performance biomass solutions that define the next generation of industrial energy.",
-    bgImage: 'https://lh3.googleusercontent.com/aida/AP1WRLs0q4V70rWgCI9GGFsvBkkl0iih-wr77iiRbE_OpDPaHgaxR-UUAIUBKwEE_vZDM7cw1yNIWK5u8E7nvVO3zHoX1zoe-9qQFwQ3Mva-aL3eXaIzsPur_xNgY3kIhZSjoOdA7Y_9Cw5mte99lA8UyQX6etLMpR7wxpKJQzQsnsEPeiSNBq8hcvuRxPR4JrNHf9TdEfM4Oj41FhTcLiF3UdU3eWPpbYAG-w5CV0EAql87A3Qab75JaZzzbI8'
+    bgImage: '/images/industries-hero.png'
   },
   detailedSectors: {
     title: 'Tailored for your scale.',

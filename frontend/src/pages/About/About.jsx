@@ -113,7 +113,7 @@ const DEFAULT_ABOUT_DATA = {
     isEnabled: false,
     title: 'Join the Clean Energy Revolution',
     subtitle: "Ready to transition your industry to high-performance biomass fuel? Let's engineer your carbon-neutral path today.",
-    bgImage: 'https://lh3.googleusercontent.com/aida/AP1WRLvGSb1VdTpxt1ylPy_XRpihKO4urH-tLZXH6EwvYPVXNyy4v7xB1mEo-Jr8EITzB8YVxLyBRag6U5HsdIztdvBtvjW6SYftpM8W4MCG3ahnFw2SJhC4xf3lZZg7TZ_MORiy5CTvH6GCiSk0M-7JVD-iswoabFaC6yzoGQv5NlPAqhlwMp_fZPph_wWN8jYNbyDq_YZGLW0UOY-BfE_XRYNtUpZXnwvhXsGSPwHAHt3Z1pz9DgKB8TrDbyI',
+    bgImage: '/images/cta-background.png',
     primaryCtaText: 'Partner with Us',
     primaryCtaLink: '/contact',
     secondaryCtaText: 'Request a Site Visit',

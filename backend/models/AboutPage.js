@@ -47,7 +47,7 @@ const CtaSchema = new mongoose.Schema({
   },
   bgImage: {
     type: String,
-    default: 'https://lh3.googleusercontent.com/aida/AP1WRLvGSb1VdTpxt1ylPy_XRpihKO4urH-tLZXH6EwvYPVXNyy4v7xB1mEo-Jr8EITzB8YVxLyBRag6U5HsdIztdvBtvjW6SYftpM8W4MCG3ahnFw2SJhC4xf3lZZg7TZ_MORiy5CTvH6GCiSk0M-7JVD-iswoabFaC6yzoGQv5NlPAqhlwMp_fZPph_wWN8jYNbyDq_YZGLW0UOY-BfE_XRYNtUpZXnwvhXsGSPwHAHt3Z1pz9DgKB8TrDbyI'
+    default: '/images/cta-background.png'
   },
   primaryCtaText: { type: String, default: 'Partner with Us' },
   primaryCtaLink: { type: String, default: '/contact' },

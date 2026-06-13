@@ -100,7 +100,7 @@ const seed = async () => {
         category: woodRes._id,
         shortDescription: 'Low ash content minimizes boiler maintenance while high density ensures logistical efficiency and stable combustion.',
         fullDescription: 'Our flagship pellet range engineered from a refined mix of sawdust and groundnut shell residues. Provides a reliable, consistent burn rate matching the performance of conventional fuels.',
-        image: 'https://lh3.googleusercontent.com/aida/AP1WRLudrAfW8c3o8y_of9ckFB-8-feUvfZxDmw3AdOnspBFsoyE2MctWdV54ENawwi_vjbEQ76KkPbYVxJV26YnoNT-76d-iuYTr5vstsoYYagsoZuJd7DBlXNNWWozddO2l0jW4dBfRlvGzpzu17sAFFZRXVVTvKAE6v4lh48NPrt2932TC4bYogqmzrXjutxfNEG_pOgPp_hn0s2-Sbp_fqlZ6d-4-8a7FTEvmmSniRK7KqPX4QaUCAuRJNo',
+        image: '/images/pellet-sawdust.png',
         specifications: [
           { parameter: 'Calorific Value', value: '4200 - 4500', unit: 'Kcal/kg' },
           { parameter: 'Moisture Content', value: '< 8.0', unit: '%' }
@@ -134,7 +134,7 @@ const seed = async () => {
         category: agriWaste._id,
         shortDescription: 'Specifically engineered for high-temperature stability, our mustard residue pellets offer a sustainable alternative.',
         fullDescription: 'Harnesses agricultural mustard crop residues. Offers excellent flame retention and high heat output, optimized for heavy load industrial boilers.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuClGfvo_z0zIKssVlrCgBE5oZFgeZlVmaaVaz0_DcgsI__G3hHAHe81gBrbfigcJ5WqM3CP-Jo4uXNNvj0yOXslo_LFJhRXKBlvGnP7ZCosZSpnA_WvX6ph1zMM7SuDcPH0Pxwt-Wl4ckcOWRM-IKKXfst7UnvBCtUOMobjdYEGhHEMmm29eh3bQzo5Lwhi5pHZCbTFkPfXR8BkyLAY9aSx3c-Yt2kM5zVD9kVn2rEmVr-UKbc2JViuLH9Yit_xJFmDQNwFeqyTe84',
+        image: '/images/pellet-mustard.png',
         specifications: [
           { parameter: 'Calorific Value', value: '3900 - 4200', unit: 'Kcal/kg' },
           { parameter: 'Moisture Content', value: '< 10.0', unit: '%' }
@@ -168,7 +168,7 @@ const seed = async () => {
         category: highComp._id,
         shortDescription: 'High-density compression for long-duration combustion in heavy industrial applications.',
         fullDescription: 'Large diameter compressed logs ideal for manual-feed boilers, gasifiers, and brick kilns where slow, uniform energy output is critical.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuClGfvo_z0zIKssVlrCgBE5oZFgeZlVmaaVaz0_DcgsI__G3hHAHe81gBrbfigcJ5WqM3CP-Jo4uXNNvj0yOXslo_LFJhRXKBlvGnP7ZCosZSpnA_WvX6ph1zMM7SuDcPH0Pxwt-Wl4ckcOWRM-IKKXfst7UnvBCtUOMobjdYEGhHEMmm29eh3bQzo5Lwhi5pHZCbTFkPfXR8BkyLAY9aSx3c-Yt2kM5zVD9kVn2rEmVr-UKbc2JViuLH9Yit_xJFmDQNwFeqyTe84',
+        image: '/images/pellet-briquettes.png',
         specifications: [
           { parameter: 'Calorific Value', value: '3800 - 4100', unit: 'Kcal/kg' },
           { parameter: 'Moisture Content', value: '< 10.0', unit: '%' }
@@ -202,7 +202,7 @@ const seed = async () => {
         category: agriWaste._id,
         shortDescription: 'Innovative utilization of rice processing residue into a uniform, high-density fuel source.',
         fullDescription: 'Paddy husk based fuel pellets designed as a low-cost, steady-burning drop-in fuel for automated boiler systems.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCnuh5Uz8Fz5OPbI5DFz7c7oqu0bKEXaNTZ3MYuwputhkxqgTiQTFtK6ucVjLOCYi-dEiaT-S2LyXZGfKaa3oZmo1JY2Y8z_tHvq41_ggBSiJyWEJNHIx5dgVDQiqyVMEZL-qlQP5wEJ5JC6Bb3dT0PJAccaiZqQYVwEGyKFFWJnslayVa00BzFhZq-xS0sgJz3uxrjIsa8pNZWK-YzSTiS8EBui6_y68NvsgUchNiVgksnxAXJ9JgHZ35z9MXBFEKMloLR9m_rOa8',
+        image: '/images/pellet-paddy.png',
         specifications: [
           { parameter: 'Calorific Value', value: '3400 - 3600', unit: 'Kcal/kg' },
           { parameter: 'Moisture Content', value: '< 12.0', unit: '%' }
@@ -236,7 +236,7 @@ const seed = async () => {
         category: agriWaste._id,
         shortDescription: 'A cost-effective, versatile blend of agricultural residues optimized for consistent boiler feed.',
         fullDescription: 'A balanced mixture of straw, husks, and agricultural residues offering general purpose industrial heating capabilities.',
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCnuh5Uz8Fz5OPbI5DFz7c7oqu0bKEXaNTZ3MYuwputhkxqgTiQTFtK6ucVjLOCYi-dEiaT-S2LyXZGfKaa3oZmo1JY2Y8z_tHvq41_ggBSiJyWEJNHIx5dgVDQiqyVMEZL-qlQP5wEGyKFFWJnslayVa00BzFhZq-xS0sgJz3uxrjIsa8pNZWK-YzSTiS8EBui6_y68NvsgUchNiVgksnxAXJ9JgHZ35z9MXBFEKMloLR9m_rOa8',
+        image: '/images/pellet-mixed.png',
         specifications: [
           { parameter: 'Calorific Value', value: '3600 - 3900', unit: 'Kcal/kg' },
           { parameter: 'Moisture Content', value: '< 10.0', unit: '%' }
