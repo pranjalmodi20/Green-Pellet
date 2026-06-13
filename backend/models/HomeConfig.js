@@ -16,7 +16,7 @@ const HomeConfigSchema = new mongoose.Schema({
   },
   heroBgImage: {
     type: String,
-    default: '/images/hero-background.png'
+    default: '/images/hero-background.jpg'
   },
   heroPrimaryCtaText: {
     type: String,
