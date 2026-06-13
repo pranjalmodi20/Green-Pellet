@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const ProductShowcase = ({ products = [] }) => {
   const defaultProducts = [
@@ -40,14 +41,19 @@ const ProductShowcase = ({ products = [] }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {displayProducts.map((product) => (
             <div key={product._id} className="group cursor-pointer">
-              <div className="rounded-[48px] overflow-hidden aspect-[4/5] relative mb-8">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="rounded-[48px] overflow-hidden aspect-[4/5] relative mb-8"
+              >
                 <img 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                  className="w-full h-full object-cover transition-transform duration-1000" 
                   src={product.image} 
                   alt={product.title}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-              </div>
+              </motion.div>
               <h3 className="font-headline-lg text-2xl mb-4">{product.title}</h3>
               <p className="font-body-md text-on-primary/70 mb-6">{product.description}</p>
               <span className="font-technical-data text-technical-data text-tertiary-fixed uppercase">{product.spec}</span>

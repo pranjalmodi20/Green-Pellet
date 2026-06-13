@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const HeroSection = ({ config = {}, metrics = {} }) => {
   const badge = config.heroBadge || 'Carbon Neutral Future';
@@ -22,13 +23,8 @@ const HeroSection = ({ config = {}, metrics = {} }) => {
   return (
     <header className="relative min-h-screen flex items-center pt-32 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          src={bgUrl}
-          alt="Biomass energy conversion"
-          className="w-full h-full object-cover"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-surface/80 via-surface/30 to-transparent"></div>
+        <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('${bgUrl}')` }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
       </div>
       <div className="relative z-10 max-w-container-max-width mx-auto px-grid-margin-desktop grid grid-cols-12 gap-grid-gutter w-full">
         <div className="col-span-12 lg:col-span-7 flex flex-col justify-center space-y-8">
@@ -48,24 +44,29 @@ const HeroSection = ({ config = {}, metrics = {} }) => {
         </div>
         {/* Real-time Metrics Card */}
         <div className="col-span-12 lg:col-span-5 flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
-          <div className="glass-panel p-10 rounded-[48px] ambient-glow space-y-8 w-full max-w-sm transform translate-y-0 lg:translate-y-12">
+          <motion.div 
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="glass-panel p-10 rounded-[48px] ambient-glow space-y-8 w-full max-w-sm cursor-pointer transform translate-y-0 lg:translate-y-12"
+          >
             <div className="space-y-2">
               <span className="font-technical-data text-technical-data text-primary/60 uppercase">Real-time Impact</span>
               <div className="h-px w-full bg-primary/10"></div>
             </div>
             <div>
-              <span className="block font-headline-lg text-headline-lg text-primary tracking-tighter">{tonsProcessed}</span>
+              <span class="block font-headline-lg text-headline-lg text-primary tracking-tighter">{tonsProcessed}</span>
               <span className="font-body-md text-on-surface-variant">Tons of Waste Processed</span>
             </div>
             <div>
-              <span className="block font-headline-lg text-headline-lg text-tertiary tracking-tighter">{co2Offset}</span>
+              <span class="block font-headline-lg text-headline-lg text-tertiary tracking-tighter">{co2Offset}</span>
               <span className="font-body-md text-on-surface-variant">CO2 Emission Reduced</span>
             </div>
             <div className="pt-4 flex items-center text-primary space-x-2">
               <span className="font-label-caps text-label-caps">View Full Audit</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </header>

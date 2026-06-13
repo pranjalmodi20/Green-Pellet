@@ -7,12 +7,11 @@ const LeaderCard = ({ member }) => {
     <motion.div
       variants={fadeUp}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className={`group relative aspect-[4/5] rounded-[48px] overflow-hidden ${
-        member.offset ? 'md:mt-12' : ''
-      }`}
+      className="group relative aspect-[4/5] rounded-[48px] overflow-hidden"
     >
       <motion.img
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.8 }}
         transition={{ duration: 0.7 }}
         className="w-full h-full object-cover"
         src={member.image}

@@ -13,8 +13,10 @@ const SustainabilitySection = ({ sustainability }) => {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOnce}
-            transition={{ duration: 0.8 }}
-            className="md:w-1/2"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="md:w-1/2 overflow-hidden rounded-[48px] cursor-pointer"
           >
             <img
               className="rounded-[48px] shadow-2xl w-full"

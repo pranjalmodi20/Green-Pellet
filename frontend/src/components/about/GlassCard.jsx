@@ -8,8 +8,9 @@ const GlassCard = ({ icon, title, description, index = 0 }) => {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={viewportOnce}
-      transition={{ duration: 1, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -4 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
       className="glass-card p-10 rounded-[48px] ambient-glow transition-all duration-500"
     >
       <h3 className="font-headline-lg text-headline-lg-mobile text-primary mb-4 flex items-center">
