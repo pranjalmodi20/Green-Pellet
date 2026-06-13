@@ -19,8 +19,9 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-sm">
         <div className="flex justify-between items-center max-w-container-max-width mx-auto px-grid-margin-desktop py-6">
-          <Link to="/" className="font-headline-lg text-2xl md:text-headline-lg text-primary dark:text-primary-fixed tracking-tighter">
-            Green Pellets India
+          <Link to="/" className="flex items-center space-x-3 font-headline-lg text-[21px] md:text-[42px] text-primary dark:text-primary-fixed tracking-tighter">
+            <img src="/images/logo.png" alt="Green Pellets India Logo" className="h-12 w-auto" />
+            <span>Green Pellets India</span>
           </Link>
           <div className="hidden md:flex space-x-8">
             <Link className={linkClass('/')} to="/">Home</Link>
